@@ -1,0 +1,12 @@
+#spring:
+#  mail:
+#    host: smtp.gmail.com
+#    username: sporterapplication@gmail.com
+#    password: d4sjWjp8H@WhI2mj
+#    port: 587
+#    properties:
+#      mail:
+#        smtp:
+#          auth: true
+#          starttls:
+#            enable: true

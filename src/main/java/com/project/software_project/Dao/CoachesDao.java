@@ -1,10 +1,7 @@
 package com.project.software_project.Dao;
 
-import com.project.software_project.Dto.LogInBody;
-import com.project.software_project.Dto.ResetPasswordBody;
-import com.project.software_project.Dto.UpdatePasswordBody;
+import com.project.software_project.bodies.StringBody;
 import com.project.software_project.Entity.CoachesEntity;
-import com.project.software_project.Entity.PlayersEntity;
 import com.project.software_project.Reposorty.CoachesRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -14,6 +11,7 @@ import org.springframework.stereotype.Service;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.io.UnsupportedEncodingException;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -27,8 +25,7 @@ public class CoachesDao
     @Autowired
     private JavaMailSender javaMailSender;
 
-    public boolean LoginCoachDao(String email, String password)
-    {
+    public boolean LoginCoachDao(String email, String password)    {
         try {
             Optional<CoachesEntity> CouchEntity;
             CouchEntity= Optional.ofNullable(CouchReposotry.findAllByEmailAndPassword(email, password));
@@ -40,10 +37,7 @@ public class CoachesDao
             return Boolean.FALSE;
         }
     }
-
-
-    public String SignUpCoachDao(CoachesEntity Coach)
-    {
+    public String SignUpCoachDao(CoachesEntity Coach)    {
         try {
             if(this.CouchReposotry.existsByEmail(Coach.getEmail())){return "Email Is Already In Use";}
             else if (this.CouchReposotry.existsByPhone(Coach.getPhone())) {return "This Phone Number Is Already in Use ";}
@@ -56,12 +50,11 @@ public class CoachesDao
         }
 
     }
-
-    public String ResetPassword(ResetPasswordBody resetPasswordBody) {
+    public String ResetPassword(String NewPass,String Email) {
         try{
             Optional<CoachesEntity> CoachEntity;
-            CoachEntity=Optional.ofNullable(this.CouchReposotry.findById(resetPasswordBody.getId())).get();
-            CoachEntity.get().setPassword(resetPasswordBody.getNewPassword());
+            CoachEntity= Optional.ofNullable(this.CouchReposotry.findAllByEmail(Email));
+            CoachEntity.get().setPassword(NewPass);
             this.CouchReposotry.save(CoachEntity.get());
             return "Success";
         }
@@ -70,29 +63,6 @@ public class CoachesDao
             return "Failed";
         }
     }
-
-    public String UpdatePassword(UpdatePasswordBody body) {
-        try {
-            Optional<CoachesEntity> CoachEntity;
-            CoachEntity= Optional.ofNullable(this.CouchReposotry.findAllByEmailAndPassword(body.getEmail(), body.getOld()));
-            CoachEntity.get().setPassword(body.getPassword());
-            this.CouchReposotry.save(CoachEntity.get());
-            return "Success";
-        }
-        catch (Exception  e)
-        {
-            return "Failed";
-        }
-    }
-
-    public boolean LoginGoogleCoachDao(Object email) {
-        if(this.CouchReposotry.existsByEmail(email.toString())) {
-            System.out.println(email.toString());
-            return Boolean.TRUE;
-        }
-        else {return Boolean.FALSE;}
-    }
-
     public Integer OTP_OpertionCoach(String email) throws MessagingException, UnsupportedEncodingException {
         Integer OTP = ThreadLocalRandom.current().nextInt(1000, 9999 + 1);
         CoachesEntity Coach =CouchReposotry.findAllByEmail(email);
@@ -113,5 +83,21 @@ public class CoachesDao
         mailSender.send(message);
 
         return OTP;
+    }
+    public List<CoachesEntity> viewAll() {
+        return this.CouchReposotry.findAll();
+    }
+    public Integer getIdFromCoachName(StringBody coachName) {
+        try {
+            Optional<CoachesEntity> Coach;
+            Coach=Optional.ofNullable(this.CouchReposotry.findAllByFullname(coachName.getBodystring()));
+            if(Coach.get().getId()==100)return -1;
+            return Coach.get().getId();
+        }
+        catch (Exception e)
+        {
+            return -1;
+        }
+
     }
 }

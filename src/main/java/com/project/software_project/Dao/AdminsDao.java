@@ -10,7 +10,6 @@ import java.util.Optional;
 public class AdminsDao {
     @Autowired
     public AdminsRepo AdminReposotry;
-
     public boolean LoginAdminDao(String email, String password)
     {
         try {

@@ -1,24 +1,19 @@
 package com.project.software_project.Dao;
 
-import com.project.software_project.Dto.LogInBody;
-import com.project.software_project.Dto.ResetPasswordBody;
-import com.project.software_project.Dto.UpdatePasswordBody;
-import com.project.software_project.Entity.PlayerStrategy;
 import com.project.software_project.Entity.PlayersEntity;
 import com.project.software_project.Reposorty.PlayersRepo;
-import net.bytebuddy.utility.RandomString;
+import com.project.software_project.bodies.EditProfileBody;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
+import javax.swing.text.html.Option;
 import java.io.UnsupportedEncodingException;
-import java.util.Date;
+import java.util.List;
 import java.util.Optional;
-import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 
 @Service
@@ -78,25 +73,11 @@ public class PlayersDao {
         }
 
     }
-    public String UpdatePassword(UpdatePasswordBody body) {
-        try {
-            Optional<PlayersEntity> PlayerEntity;
-            PlayerEntity= Optional.ofNullable(PlayerRepository.findAllByEmailAndPassword(body.getEmail(), body.getOld()));
-            PlayerEntity.get().setPassword(body.getPassword());
-            this.PlayerRepository.save(PlayerEntity.get());
-            return "Success";
-        }
-        catch (Exception  e)
-        {
-            return "Failed";
-        }
-
-    }
-    public String ResetPassword(ResetPasswordBody resetPasswordBody) {
+    public String ResetPassword(String NewPass,String Email) {
         try{
             Optional<PlayersEntity> PlayerEntity;
-            PlayerEntity= Optional.ofNullable(this.PlayerRepository.findAllById(resetPasswordBody.getId()));
-            PlayerEntity.get().setPassword(resetPasswordBody.getNewPassword());
+            PlayerEntity= Optional.ofNullable(this.PlayerRepository.findAllByEmail(Email));
+            PlayerEntity.get().setPassword(NewPass);
             this.PlayerRepository.save(PlayerEntity.get());
             return "Success";
         }
@@ -105,7 +86,35 @@ public class PlayersDao {
             return "Failed";
         }
     }
-
-
-
+    public List<PlayersEntity> viewAll()
+    {
+        return this.PlayerRepository.findAll();
+    }
+    public String Editinfo(EditProfileBody body) {
+        Optional<PlayersEntity>Player;
+        Player=Optional.ofNullable(this.PlayerRepository.findAllByEmail(body.getEmail()));
+        if(Player.isPresent())
+        {
+            Player.get().setPhone(body.getPhone());
+            Player.get().setFullname(body.getName());
+            Player.get().setGoal(body.getGoal());
+            this.PlayerRepository.save(Player.get());
+            return "Success";
+        }
+        else
+        {
+            Player=Optional.ofNullable(this.PlayerRepository.findAllByPhone(body.getPhone()));
+            if(Player.isPresent())
+            {
+                Player.get().setEmail(body.getEmail());
+                Player.get().setFullname(body.getName());
+                Player.get().setGoal(body.getGoal());
+                this.PlayerRepository.save(Player.get());
+                return "Success";
+            }
+            else{
+                return "You Can't Edit Phone & Email At The Same Time ";
+            }
+        }
+    }
 }

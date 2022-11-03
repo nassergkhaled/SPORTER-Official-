@@ -2,32 +2,30 @@ package com.project.software_project.Controller;
 
 import com.project.software_project.Dao.CoachesDao;
 import com.project.software_project.Dao.PlayersDao;
-import com.project.software_project.Dto.LogInBody;
-import com.project.software_project.Dto.ResetPasswordBody;
+import com.project.software_project.bodies.LogInBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping(path = "/reset-password")
 public class ResetPasswordController {
     @Autowired
     private PlayersDao PlayerDao;
     @Autowired
     private CoachesDao CoachDao;
 
-    @PostMapping(path = "/reset-password")
-    public String ResetPassword (@RequestBody ResetPasswordBody ResetPasswordBody)
+    @PostMapping(path = "/player")
+    public String ResetPasswordPlayer (@RequestBody LogInBody NewPassBody)
     {
-
-        if(ResetPasswordBody.getId()>1000)
-        {
-            return this.PlayerDao.ResetPassword(ResetPasswordBody);
-        }
-        else
-        {
-            return this.CoachDao.ResetPassword(ResetPasswordBody);
-        }
-
+        return this.PlayerDao.ResetPassword(NewPassBody.getPassword(),NewPassBody.getEmail());
     }
+    @PostMapping(path = "/coach")
+    public String ResetPasswordCoach (@RequestBody LogInBody NewPassBody)
+    {
+        return this.CoachDao.ResetPassword(NewPassBody.getPassword(),NewPassBody.getEmail());
+    }
+
 }

@@ -3,10 +3,14 @@ package com.project.software_project.Controller;
 import com.project.software_project.Dao.AdminsDao;
 import com.project.software_project.Dao.CoachesDao;
 import com.project.software_project.Dao.PlayersDao;
-import com.project.software_project.Dto.LogInBody;
+import com.project.software_project.bodies.LogInBody;
+import com.project.software_project.Entity.CoachesEntity;
+import com.project.software_project.Entity.PlayersEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(path = "/login")
@@ -31,6 +35,16 @@ public class LogInController {
         } else {
             return "Failed";
         }
+    }
+    @GetMapping(path = "/view-all")
+    public List<CoachesEntity> viewAllCoaches()
+    {
+        return this.CoachDao.viewAll();
+    }
+    @GetMapping(path = "/view-all/p")
+    public List<PlayersEntity> viewAllPlayers()
+    {
+        return this.PlayerDao.viewAll();
     }
 
 

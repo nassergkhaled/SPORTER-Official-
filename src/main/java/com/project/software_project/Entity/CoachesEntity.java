@@ -1,12 +1,22 @@
 package com.project.software_project.Entity;
 
-import lombok.Data;
+//import com.fasterxml.jackson.annotation.JsonManagedReference;
+//import org.codehaus.jackson.annotate.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+//import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "coaches")
+@Getter
 @Data
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "id")
 public class CoachesEntity
 {
     @Id
@@ -23,4 +33,12 @@ public class CoachesEntity
     public int age;
     public short paymentperiod;//0 -->Monthly // 1-->Quarterly // 2-->ANNUAL
     public int amount;
+    public int goal ;//0--> Learn The Basics// 1-->Get Fitter// 2--> Lose Weight// 3--> Gain Weight//4-->Gain More Flexible
+
+
+
+    @OneToMany(mappedBy = "Coach")//Note Very Important if you made many relations for the same entity you have to choose the same mapped by name
+    //@JsonManagedReference
+    private List<PlayersEntity> playersOfCoach;
+
 }

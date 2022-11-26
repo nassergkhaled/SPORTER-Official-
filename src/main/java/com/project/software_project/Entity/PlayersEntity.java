@@ -22,6 +22,8 @@ import java.util.Date;
 @Data
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "id")
 public class PlayersEntity {
+
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,7 +41,32 @@ public class PlayersEntity {
     //public int gymid;
     public int coachid;
 
+    /*
+    public PlayersEntity(Integer id, String phone, String email, String fullname, String password, boolean gender, short strategy, float weight, float height, int age, int goal, int coachid, String oneTimePassword, Date otpRequestedTime, CoachesEntity coach) {
+        this.id = id;
+        this.phone = phone;
+        this.email = email;
+        this.fullname = fullname;
+        this.password = password;
+        this.gender = gender;
+        this.strategy = strategy;
+        this.weight = weight;
+        this.height = height;
+        this.age = age;
+        this.goal = goal;
+        this.oneTimePassword = oneTimePassword;
+        this.otpRequestedTime = otpRequestedTime;
+        Coach = coach;
+
+
+        if(this.coachid==0){ this.coachid = 100; return;}
+        this.coachid = coachid;
+    }*/
+
+
+
     //OTP by Email Code
+    @Transient
     private static final long OTP_VALID_DURATION = 5 * 60 * 1000;   // 5 minutes
 
     @Column(name = "one_time_password")
@@ -47,23 +74,6 @@ public class PlayersEntity {
 
     @Column(name = "otp_requested_time")
     public Date otpRequestedTime;
-
-
-//    @Transient
-//    int i=0;
-//
-//
-//    public boolean Flsag()
-//    {
-//        if(i==0)
-//            this.flag true;
-//        i++;
-//        this.flag= false;
-//    }
-//    @Transient
-//    private static final boolean flag=Flsag();
-
-
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "coachid",insertable = false,updatable = false)
     //@JsonBackReference

@@ -14,11 +14,11 @@ import java.util.List;
 
 @Entity
 @Table(name = "coaches")
-@Getter
 @Data
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "id")
 public class CoachesEntity
 {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -38,7 +38,6 @@ public class CoachesEntity
 
 
     @OneToMany(mappedBy = "Coach")//Note Very Important if you made many relations for the same entity you have to choose the same mapped by name
-    //@JsonManagedReference
     private List<PlayersEntity> playersOfCoach;
 
 }

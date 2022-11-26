@@ -10,20 +10,20 @@ import java.util.Optional;
 public class AdminsDao {
     @Autowired
     public AdminsRepo AdminReposotry;
-    public boolean LoginAdminDao(String email, String password)
+    public Integer LoginAdminDao(String email, String password)
     {
         try {
             Optional<AdminsEntity> AdminEntity;
             AdminEntity = Optional.ofNullable(AdminReposotry.findAllByEmailAndPassword(email, password));
             if (AdminEntity.isPresent()) {
-                return Boolean.TRUE;
+                return AdminEntity.get().getId();
             } else {
-                return Boolean.FALSE;
+                return 0;
             }
         }
         catch (Exception e)
         {
-            return Boolean.FALSE;
+            return 0;
         }
     }
 }

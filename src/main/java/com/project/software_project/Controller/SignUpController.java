@@ -2,6 +2,7 @@ package com.project.software_project.Controller;
 
 import com.project.software_project.Dao.CoachesDao;
 import com.project.software_project.Dao.PlayersDao;
+import com.project.software_project.bodies.PhoneDigitsAPIBody;
 import com.project.software_project.bodies.StringBody;
 import com.project.software_project.Entity.CoachesEntity;
 import com.project.software_project.Entity.PlayersEntity;
@@ -20,20 +21,20 @@ public class SignUpController {
     @PostMapping(path = "/player")
     public String SignUp(@RequestBody PlayersEntity Player)
     {
-        return this.PlayerDao.SignUpPlayerDao(Player);
+        return this.PlayerDao.SignUpPlayer(Player);
     }
 
     @PostMapping(path = "/coach")
     public String SignUp(@RequestBody CoachesEntity Coach)
     {
-        return this.CoachDao.SignUpCoachDao(Coach);
+        return this.CoachDao.SignUpCoach(Coach);
     }
 
     @PostMapping(path = "/otp/player")
     public Integer OtpPlayer(@RequestBody StringBody email)
     {
         try {
-            return this.PlayerDao.OTP_OpertionPlayer(email.bodystring);
+            return this.PlayerDao.OTP_OperationPlayer(email.bodystring);
         }
         catch (Exception e)
         {
@@ -44,12 +45,21 @@ public class SignUpController {
     public Integer OtpCoach(@RequestBody StringBody email)
     {
         try {
-            return this.CoachDao.OTP_OpertionCoach(email.bodystring);
+            return this.CoachDao.OTP_OperationCoach(email.bodystring);
         }
         catch (Exception e)
         {
             return -1;
         }
-
+    }
+    @PostMapping (path = "/getphonedigitscoach")
+    public PhoneDigitsAPIBody GetPhoneDigitsC(@RequestBody StringBody email)
+    {
+        return this.CoachDao.phonedigitscoach(email.bodystring);
+    }
+    @PostMapping (path = "/getphonedigitspalyer")
+    public PhoneDigitsAPIBody GetPhoneDigitsP(@RequestBody StringBody email)
+    {
+        return this.PlayerDao.phonedigitsplayer(email.bodystring);
     }
 }

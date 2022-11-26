@@ -3,7 +3,10 @@ package com.project.software_project.Controller;
 import com.project.software_project.Dao.CoachesDao;
 import com.project.software_project.bodies.StringBody;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
@@ -13,8 +16,7 @@ public class FrontAssociationController {
     private CoachesDao CoachDao;
 
     @GetMapping(path = "/id-from-coach-name")
-    public Integer getIdFromCoachName(@RequestBody StringBody CoachName)
-    {
+    public Integer getIdFromCoachName(@RequestBody StringBody CoachName) {
         return this.CoachDao.getIdFromCoachName(CoachName);
     }
 }

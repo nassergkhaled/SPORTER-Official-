@@ -3,9 +3,10 @@ package com.project.software_project.Controller;
 import com.project.software_project.Dao.AdminsDao;
 import com.project.software_project.Dao.CoachesDao;
 import com.project.software_project.Dao.PlayersDao;
-import com.project.software_project.bodies.LogInBody;
+import com.project.software_project.bodies.LogInRequestBody;
 import com.project.software_project.Entity.CoachesEntity;
 import com.project.software_project.Entity.PlayersEntity;
+import com.project.software_project.bodies.LogInResponseBody;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.*;
@@ -25,15 +26,27 @@ public class LogInController {
 
 
     @PostMapping("/")
-    public String LogIn(@RequestBody LogInBody Body) {
-        if (PlayerDao.LoginPlayerDao(Body.getEmail(), Body.getPassword())) {
-            return "Success 'Player'";
-        } else if (CoachDao.LoginCoachDao(Body.getEmail(), Body.getPassword())) {
-            return "Success 'Coach'";
-        } else if (AdminDao.LoginAdminDao(Body.getEmail(), Body.getPassword())) {
-            return "Success 'Admin'";
+    public LogInResponseBody LogIn(@RequestBody LogInRequestBody Body) {
+        Integer PlayerID=PlayerDao.LoginPlayer(Body.getEmail(), Body.getPassword());
+        Integer CoachID=CoachDao.LoginCoach(Body.getEmail(), Body.getPassword());
+        Integer AdminID=AdminDao.LoginAdminDao(Body.getEmail(), Body.getPassword());
+        LogInResponseBody ResponseBody=new LogInResponseBody();
+        if (PlayerID!=0) {
+            ResponseBody.setMsg("Success 'Player' ");
+            ResponseBody.setID(PlayerID);
+            return ResponseBody;
+        } else if (CoachID!=0) {
+            ResponseBody.setMsg("Success 'Coach'");
+            ResponseBody.setID(CoachID);
+            return ResponseBody;
+        } else if (AdminID!=0) {
+            ResponseBody.setMsg("Success 'Admin'");
+            ResponseBody.setID(AdminID);
+            return ResponseBody;
         } else {
-            return "Failed";
+            ResponseBody.setMsg("Failed");
+            ResponseBody.setID(-1);
+            return ResponseBody;
         }
     }
     @GetMapping(path = "/view-all")
@@ -48,16 +61,5 @@ public class LogInController {
     }
 
 
-//    @GetMapping(path = "/google")
-//    public String OAuth(OAuth2AuthenticationToken oAuth2AuthenticationToken)
-//    {
-//        if (PlayerDao.LoginGooglePlayerDao(oAuth2AuthenticationToken.getPrincipal().getAttribute("email"))) {
-//            return "Success 'Player'";
-//        } else if (CoachDao.LoginGoogleCoachDao(oAuth2AuthenticationToken.getPrincipal().getAttribute("email"))) {
-//            return "Success 'Coach'";
-//        } else {
-//            return "Failed";
-//        }
-//    }
 
 }

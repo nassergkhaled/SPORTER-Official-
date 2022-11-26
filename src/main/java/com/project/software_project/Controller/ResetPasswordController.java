@@ -2,7 +2,7 @@ package com.project.software_project.Controller;
 
 import com.project.software_project.Dao.CoachesDao;
 import com.project.software_project.Dao.PlayersDao;
-import com.project.software_project.bodies.LogInBody;
+import com.project.software_project.bodies.LogInRequestBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,12 +18,12 @@ public class ResetPasswordController {
     private CoachesDao CoachDao;
 
     @PostMapping(path = "/player")
-    public String ResetPasswordPlayer (@RequestBody LogInBody NewPassBody)
+    public String ResetPasswordPlayer (@RequestBody LogInRequestBody NewPassBody)
     {
         return this.PlayerDao.ResetPassword(NewPassBody.getPassword(),NewPassBody.getEmail());
     }
     @PostMapping(path = "/coach")
-    public String ResetPasswordCoach (@RequestBody LogInBody NewPassBody)
+    public String ResetPasswordCoach (@RequestBody LogInRequestBody NewPassBody)
     {
         return this.CoachDao.ResetPassword(NewPassBody.getPassword(),NewPassBody.getEmail());
     }

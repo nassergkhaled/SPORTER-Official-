@@ -63,19 +63,30 @@ public class PlayersDao {
 
     }
 
+
     public String SignUpPlayer(PlayersEntity Player) {
+         int Flag=-1;
         try {
             if (this.PlayerRepository.existsByEmail(Player.getEmail())) {
                 return "Email Is Already In Use";
             } else if (this.PlayerRepository.existsByPhone(Player.getPhone())) {
                 return "This Phone Number Is Already in Use ";
-            } else if ((Player.getCoachid() < 101) || (Player.getCoachid() > 999)) {
+            }  if ((Player.getCoachid() < 101) || (Player.getCoachid() > 999)) {
+                Flag++;
                 Player.setCoachid(100);
+                Player.setStrategy((short) 1);
+            }  if (Player.getGymid()<101 || Player.getGymid()>999) {
+                Flag++;
+                Player.setGymid(100);
+                Player.setStrategy((short) 3);
+            } if (Flag==1) {
+                System.out.println("I am an application player");
+                Player.setStrategy((short) 2);
             }
             this.PlayerRepository.save(Player);
             return " Success";
         } catch (Exception e) {
-            //System.out.println(e.toString());
+            //System.out.println(e.getMessage());
             return "Failed";
         }
 
@@ -144,6 +155,10 @@ public class PlayersDao {
             Response.setLastTwo(R.toString());
             return Response;
         }
+    }
+
+    public List<PlayersEntity> ShowAll() {
+        return this.PlayerRepository.findAll();
     }
 }
 

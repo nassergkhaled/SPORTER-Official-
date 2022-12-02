@@ -1,8 +1,10 @@
 package com.project.software_project.Entity;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -19,4 +21,7 @@ public class GymsEntity
     public Integer amountquarterly;
     public Integer amountannual;
 
+    @JsonManagedReference
+    @OneToMany(mappedBy = "gymentity")
+    private List<PlayersEntity> gymPlayers;
 }

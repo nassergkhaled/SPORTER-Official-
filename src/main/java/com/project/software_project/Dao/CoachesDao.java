@@ -125,4 +125,8 @@ public class CoachesDao {
             return Response;
         }
     }
+
+    public List<CoachesEntity> ShowAll() {
+        return this.CouchReposotry.findAll();
+    }
 }

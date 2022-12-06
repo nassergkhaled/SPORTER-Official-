@@ -1,4 +1,4 @@
-package com.project.software_project.Dto;
+package com.project.software_project.bodies;
 
 import lombok.Data;
 

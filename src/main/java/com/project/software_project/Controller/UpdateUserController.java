@@ -3,7 +3,7 @@ package com.project.software_project.Controller;
 
 import com.project.software_project.Dao.CoachesDao;
 import com.project.software_project.Dao.PlayersDao;
-import com.project.software_project.Dto.UpdatePasswordBody;
+import com.project.software_project.bodies.UpdatePasswordBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -9,12 +9,12 @@ import java.util.Optional;
 @Service
 public class AdminsDao {
     @Autowired
-    public AdminsRepo AdminReposotry;
+    public AdminsRepo AdminRepository;
     public Integer LoginAdminDao(String email, String password)
     {
         try {
             Optional<AdminsEntity> AdminEntity;
-            AdminEntity = Optional.ofNullable(AdminReposotry.findAllByEmailAndPassword(email, password));
+            AdminEntity = Optional.ofNullable(AdminRepository.findAllByEmailAndPassword(email, password));
             if (AdminEntity.isPresent()) {
                 return AdminEntity.get().getId();
             } else {

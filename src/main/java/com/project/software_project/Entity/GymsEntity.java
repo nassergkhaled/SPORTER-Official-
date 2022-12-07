@@ -20,6 +20,8 @@ public class GymsEntity
     public Integer amountmonthly;
     public Integer amountquarterly;
     public Integer amountannual;
+    public float rating;
+
 
     @JsonManagedReference
     @OneToMany(mappedBy = "gymentity")

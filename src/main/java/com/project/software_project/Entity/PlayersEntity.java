@@ -41,6 +41,7 @@ public class PlayersEntity {
     //public int gymid;
     public int coachid;
     public int gymid;
+    public String city;
 
     /*
     public PlayersEntity(Integer id, String phone, String email, String fullname, String password, boolean gender, short strategy, float weight, float height, int age, int goal, int coachid, String oneTimePassword, Date otpRequestedTime, CoachesEntity coach) {

@@ -23,4 +23,5 @@ public interface PlayersRepo extends JpaRepository<PlayersEntity,Integer> {
     public PlayersEntity findAllByEmailAndPassword(String email, String password);
 
 
+
 }

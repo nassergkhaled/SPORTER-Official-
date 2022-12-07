@@ -8,6 +8,7 @@ import com.project.software_project.Entity.GymsEntity;
 import com.project.software_project.Entity.PlayersEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -23,10 +24,10 @@ public class TestController {
     private CoachesDao CoachDao;
 
 
-    @GetMapping(path = "gyms")
-    public  List<GymsEntity>VIEWALLGYMS()
+    @GetMapping(path = "gymsd/{gymid}")
+    public  List<PlayersEntity>viewAllGymPlayers(@PathVariable(name = "gymid") Integer gymId)
     {
-        return this.GymDao.ShowAll();
+        return this.GymDao.showAllGymPlayers(gymId);
     }
     @GetMapping(path = "players")
     public  List<PlayersEntity>VIEWALLPlayers()

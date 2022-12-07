@@ -9,4 +9,7 @@ import java.util.Optional;
 public interface GymsRepo extends JpaRepository<GymsEntity,Integer> {
     public List<GymsEntity>findAll();
     public Optional<GymsEntity> findById(Integer id);
+    public List<GymsEntity>findAllByLocation(String location);
+
+    public GymsEntity findAllById(int i);
 }

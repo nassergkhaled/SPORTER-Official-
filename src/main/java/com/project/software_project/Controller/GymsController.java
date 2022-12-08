@@ -1,6 +1,7 @@
 
 package com.project.software_project.Controller;
 import com.project.software_project.Dao.GymsDao;
+import com.project.software_project.Dto.GymsDto;
 import com.project.software_project.Entity.GymsEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,7 +24,7 @@ public class GymsController {
     }
 
     @GetMapping(path = "/{playerid}")
-    public List<GymsEntity> viewRecommendedGymsForASpecificPlayer(@PathVariable (name = "playerid") Integer playerId)
+    public List<GymsDto> viewRecommendedGymsForASpecificPlayer(@PathVariable (name = "playerid") Integer playerId)
     {
         return this.gymsDao.viewRecommendedGymsForASpecificPlayer(playerId);
 

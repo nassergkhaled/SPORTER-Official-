@@ -1,6 +1,7 @@
 package com.project.software_project.Dao;
 
 import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.project.software_project.Dto.GymsDto;
 import com.project.software_project.Entity.GymsEntity;
 import com.project.software_project.Entity.PlayersEntity;
 import com.project.software_project.Reposorty.GymsRepo;
@@ -47,7 +48,7 @@ public class GymsDao {
 //    }
 
 
-    public List<GymsEntity> viewRecommendedGymsForASpecificPlayer(Integer playerId) {
+    public List<GymsDto> viewRecommendedGymsForASpecificPlayer(Integer playerId) {
         try {
             Optional<PlayersEntity>player=this.playersRepo.findById(playerId);
             if(player.isPresent())
@@ -56,8 +57,7 @@ public class GymsDao {
                 response.sort(Comparator.comparing(GymsEntity::getRating,Comparator.reverseOrder()));
                 response.sort(Comparator.comparing(GymsEntity::getAmountmonthly));
                 //response=removeAttributeFromAllObjectsInArrayList(response,"gymPlayers");
-
-                return response;
+                return GymsDto.convertDtoToEntity(response);
             }
             else {return new ArrayList<>();}
         }

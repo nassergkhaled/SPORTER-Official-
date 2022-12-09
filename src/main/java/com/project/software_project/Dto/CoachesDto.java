@@ -47,4 +47,20 @@ public class CoachesDto {
                 .playersOfCoach(Coach.getPlayersOfCoach())
                 .build();
     }
+
+    public static CoachesDto toDtoWithoutPrivateData(CoachesEntity Coach) {
+        return CoachesDto.builder()
+                .phone(Coach.getPhone())
+                .email(Coach.getEmail())
+                .fullname(Coach.getFullname())
+                .gender(Coach.isGender())
+                .weight(Coach.getWeight())
+                .height(Coach.getHeight())
+                .age(Coach.getAge())
+                .paymentperiod(Coach.getPaymentperiod())
+                .amount(Coach.getAmount())
+                .goal(Coach.getGoal())
+                .playersOfCoach(Coach.getPlayersOfCoach())
+                .build();
+    }
 }

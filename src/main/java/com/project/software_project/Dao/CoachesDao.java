@@ -138,7 +138,7 @@ public class CoachesDao {
             Optional<CoachesEntity>Coach=Optional.ofNullable(this.CouchReposotry.findAllById(coachId));
             if(Coach.isPresent())
             {
-                return  CoachesDto.toDto(Coach.get());
+                return  CoachesDto.toDtoWithoutPrivateData(Coach.get());
             }
             else {return new CoachesDto();}
 

@@ -1,8 +1,6 @@
 package com.project.software_project.Dao;
 
 import com.project.software_project.Dto.CoachesDto;
-import com.project.software_project.Dto.GymsDto;
-import com.project.software_project.Entity.GymsEntity;
 import com.project.software_project.bodies.PhoneDigitsAPIBody;
 import com.project.software_project.bodies.StringBody;
 import com.project.software_project.Entity.CoachesEntity;
@@ -15,6 +13,7 @@ import org.springframework.stereotype.Service;
 import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.ThreadLocalRandom;
@@ -22,7 +21,7 @@ import java.util.concurrent.ThreadLocalRandom;
 @Service
 public class CoachesDao {
     @Autowired
-    private CoachesRepo CouchReposotry;
+    private CoachesRepo couchReposotry;
     @Autowired
     JavaMailSender mailSender;
     @Autowired
@@ -31,7 +30,7 @@ public class CoachesDao {
     public Integer LoginCoach(String email, String password) {
         try {
             Optional<CoachesEntity> CoachEntity;
-            CoachEntity = Optional.ofNullable(CouchReposotry.findAllByEmailAndPassword(email, password));
+            CoachEntity = Optional.ofNullable(couchReposotry.findAllByEmailAndPassword(email, password));
             if (CoachEntity.isPresent()) {
                 return CoachEntity.get().getId();
             } else {
@@ -44,12 +43,12 @@ public class CoachesDao {
 
     public String SignUpCoach(CoachesEntity Coach) {
         try {
-            if (this.CouchReposotry.existsByEmail(Coach.getEmail())) {
+            if (this.couchReposotry.existsByEmail(Coach.getEmail())) {
                 return "Email Is Already In Use";
-            } else if (this.CouchReposotry.existsByPhone(Coach.getPhone())) {
+            } else if (this.couchReposotry.existsByPhone(Coach.getPhone())) {
                 return "This Phone Number Is Already in Use ";
             }
-            this.CouchReposotry.save(Coach);
+            this.couchReposotry.save(Coach);
             return " Success";
         } catch (Exception e) {
             return "Failed";
@@ -60,9 +59,9 @@ public class CoachesDao {
     public String ResetPassword(String NewPass, String Email) {
         try {
             Optional<CoachesEntity> CoachEntity;
-            CoachEntity = Optional.ofNullable(this.CouchReposotry.findAllByEmail(Email));
+            CoachEntity = Optional.ofNullable(this.couchReposotry.findAllByEmail(Email));
             CoachEntity.get().setPassword(NewPass);
-            this.CouchReposotry.save(CoachEntity.get());
+            this.couchReposotry.save(CoachEntity.get());
             return "Success";
         } catch (Exception e) {
             return "Failed";
@@ -71,7 +70,7 @@ public class CoachesDao {
 
     public Integer OTP_OperationCoach(String email) throws MessagingException, UnsupportedEncodingException {
         Integer OTP = ThreadLocalRandom.current().nextInt(1000, 9999 + 1);
-        CoachesEntity Coach = CouchReposotry.findAllByEmail(email);
+        CoachesEntity Coach = couchReposotry.findAllByEmail(email);
         MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message);
 
@@ -92,13 +91,13 @@ public class CoachesDao {
     }
 
     public List<CoachesEntity> viewAll() {
-        return this.CouchReposotry.findAll();
+        return this.couchReposotry.findAll();
     }
 
     public Integer getIdFromCoachName(StringBody coachName) {
         try {
             Optional<CoachesEntity> Coach;
-            Coach = Optional.ofNullable(this.CouchReposotry.findAllByFullname(coachName.getBodystring()));
+            Coach = Optional.ofNullable(this.couchReposotry.findAllByFullname(coachName.getBodystring()));
             if (Coach.get().getId() == 100) return -1;
             return Coach.get().getId();
         } catch (Exception e) {
@@ -111,7 +110,7 @@ public class CoachesDao {
         PhoneDigitsAPIBody Response = new PhoneDigitsAPIBody();
         try {
             Optional<CoachesEntity> Coach;
-            Coach = Optional.ofNullable(this.CouchReposotry.findAllByEmail(email.toString()));
+            Coach = Optional.ofNullable(this.couchReposotry.findAllByEmail(email.toString()));
             if (Coach.isPresent()) {
                 Response.setFirstFour("+" + Coach.get().getPhone().subSequence(0, 4).toString());
                 Response.setLastTwo(Coach.get().getPhone().subSequence(Coach.get().getPhone().length() - 2, Coach.get().getPhone().length()).toString());
@@ -129,13 +128,22 @@ public class CoachesDao {
         }
     }
 
-    public List<CoachesEntity> ShowAll() {
-        return this.CouchReposotry.findAll();
+        public List<CoachesDto> ShowAll() {
+        try {
+            Optional<List<CoachesEntity>>coaches=Optional.ofNullable(this.couchReposotry.findAll());
+            List<CoachesDto>response=CoachesDto.convertDtoToEntityWithoutPrivateData(coaches.get());
+            response.remove(0/*CoachesDto.toDto(this.CouchReposotry.findAllById(100))*/);
+            return response;
+        }
+        catch (Exception e)
+        {
+            return new ArrayList<>();
+        }
     }
 
     public CoachesDto returnAllCoachData(Integer coachId) {
         try {
-            Optional<CoachesEntity>Coach=Optional.ofNullable(this.CouchReposotry.findAllById(coachId));
+            Optional<CoachesEntity>Coach=Optional.ofNullable(this.couchReposotry.findAllById(coachId));
             if(Coach.isPresent())
             {
                 return  CoachesDto.toDtoWithoutPrivateData(Coach.get());

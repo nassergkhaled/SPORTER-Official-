@@ -3,6 +3,7 @@ package com.project.software_project.Controller;
 import com.project.software_project.Dao.CoachesDao;
 import com.project.software_project.Dao.GymsDao;
 import com.project.software_project.Dao.PlayersDao;
+import com.project.software_project.Dto.CoachesDto;
 import com.project.software_project.Entity.CoachesEntity;
 import com.project.software_project.Entity.GymsEntity;
 import com.project.software_project.Entity.PlayersEntity;
@@ -30,7 +31,7 @@ public class TestController {
         return this.PlayerDao.ShowAll();
     }
     @GetMapping(path = "coaches")
-    public  List<CoachesEntity>VIEWALLCoaches()
+        public  List<CoachesDto>VIEWALLCoaches()
     {
         return this.CoachDao.ShowAll();
     }

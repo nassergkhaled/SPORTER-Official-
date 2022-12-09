@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Builder
@@ -62,5 +63,33 @@ public class CoachesDto {
                 .goal(Coach.getGoal())
                 .playersOfCoach(Coach.getPlayersOfCoach())
                 .build();
+    }
+    public static CoachesDto toDtoWithoutPrivateDataNorPlayers(CoachesEntity Coach)
+    {
+        return CoachesDto.builder()
+                .phone(Coach.getPhone())
+                .email(Coach.getEmail())
+                .fullname(Coach.getFullname())
+                .gender(Coach.isGender())
+                .weight(Coach.getWeight())
+                .height(Coach.getHeight())
+                .age(Coach.getAge())
+                .paymentperiod(Coach.getPaymentperiod())
+                .amount(Coach.getAmount())
+                .goal(Coach.getGoal())
+                .build();
+
+    }
+
+
+
+    public static List<CoachesDto> convertDtoToEntityWithoutPrivateData(List<CoachesEntity> Coach) {
+        List<CoachesDto> newCoachesEntityList = new ArrayList<>();
+
+        for (CoachesEntity dto : Coach){
+            GymsDto newGym=new GymsDto();
+            newCoachesEntityList.add(CoachesDto.toDtoWithoutPrivateDataNorPlayers(dto));
+        }
+        return newCoachesEntityList;
     }
 }

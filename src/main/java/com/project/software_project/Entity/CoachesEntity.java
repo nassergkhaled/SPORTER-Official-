@@ -7,14 +7,19 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+import com.project.software_project.Dto.CoachesDto;
 import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
+
+@Builder
 @Entity
 @Table(name = "coaches")
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class,property = "id")
 public class CoachesEntity
 {
@@ -39,5 +44,23 @@ public class CoachesEntity
 
     @OneToMany(mappedBy = "Coach")//Note Very Important if you made many relations for the same entity you have to choose the same mapped by name
     private List<PlayersEntity> playersOfCoach;
+
+    public static CoachesEntity toDto(CoachesDto Coach) {
+        return CoachesEntity.builder()
+                .id(Coach.getId())
+                .phone(Coach.getPhone())
+                .email(Coach.getEmail())
+                .fullname(Coach.getFullname())
+                .password(Coach.getPassword())
+                .gender(Coach.isGender())
+                .weight(Coach.getWeight())
+                .height(Coach.getHeight())
+                .age(Coach.getAge())
+                .paymentperiod(Coach.getPaymentperiod())
+                .amount(Coach.getAmount())
+                .goal(Coach.getGoal())
+                .playersOfCoach(Coach.getPlayersOfCoach())
+                .build();
+    }
 
 }

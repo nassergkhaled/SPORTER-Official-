@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.util.List;
 
 
@@ -23,13 +22,14 @@ public class GymsController {
         return this.gymsDao.viewAllGyms();
     }
 
-    @GetMapping(path = "/{playerid}")
+    @GetMapping(path = "/for/{playerid}")
     public List<GymsDto> viewRecommendedGymsForASpecificPlayer(@PathVariable (name = "playerid") Integer playerId)
     {
         return this.gymsDao.viewRecommendedGymsForASpecificPlayer(playerId);
-
     }
-
-
-
+    @GetMapping(path = "/{gymid}")
+    public GymsDto returnAllGymData(@PathVariable (name = "gymid") Integer gymId)
+    {
+        return this.gymsDao.returnAllGymData(gymId);
+    }
 }

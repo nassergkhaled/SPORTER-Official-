@@ -17,12 +17,16 @@ public class FileUploadUtil {
         Path uploadPath = Paths.get("Files-Upload");// generally
         Integer Flag=0;
         if(Type.startsWith("pp-")) {Flag = 1; /* Profile Picture*/}
-//            else if(){Flag = 2; /* Gym Picture*/}
+            else if(Type.startsWith("gp-")){Flag = 2; /* Gym Picture*/}
 //            else if(){Flag = 3; /* Diet Picture*/}
         switch (Flag) {
-            case (1) :
+            case (1):
                 //Profile Picture Image
-                 uploadPath = Paths.get("Files-Upload/Profile-Pictures");
+                uploadPath = Paths.get("Files-Upload/Profile-Pictures");
+
+            case (2):
+                //Gym Picture Image
+                uploadPath = Paths.get("Files-Upload/Gym-Pictures");
         }
 
         if (!Files.exists(uploadPath)) {
@@ -32,12 +36,12 @@ public class FileUploadUtil {
         //String fileCode = RandomStringUtils.randomAlphanumeric(8);
 
         try (InputStream inputStream = multipartFile.getInputStream()) {
-            Path filePath = uploadPath.resolve(Type.substring(3,Type.length()));
+            Path filePath = uploadPath.resolve(Type.substring(3,Type.length())+".png");
             Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException ioe) {
             throw new IOException("Could not save file: " + fileName, ioe);
         }
 
-        return (Type.substring(3,Type.length())+".png");
+        return Type.substring(3,Type.length())+".png";
     }
 }

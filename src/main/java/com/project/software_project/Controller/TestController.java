@@ -24,11 +24,6 @@ public class TestController {
     private CoachesDao CoachDao;
 
 
-    @GetMapping(path = "gymsd/{gymid}")
-    public  List<PlayersEntity>viewAllGymPlayers(@PathVariable(name = "gymid") Integer gymId)
-    {
-        return this.GymDao.showAllGymPlayers(gymId);
-    }
     @GetMapping(path = "players")
     public  List<PlayersEntity>VIEWALLPlayers()
     {

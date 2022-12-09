@@ -25,10 +25,12 @@ public class GymsEntity
     public Integer id;
     public String location;
     public String name;
+    public String description;
     public Integer amountmonthly;
     public Integer amountquarterly;
     public Integer amountannual;
     public float rating;
+
 
 
     @JsonManagedReference

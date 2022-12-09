@@ -1,5 +1,8 @@
 package com.project.software_project.Dao;
 
+import com.project.software_project.Dto.CoachesDto;
+import com.project.software_project.Dto.GymsDto;
+import com.project.software_project.Entity.GymsEntity;
 import com.project.software_project.bodies.PhoneDigitsAPIBody;
 import com.project.software_project.bodies.StringBody;
 import com.project.software_project.Entity.CoachesEntity;
@@ -128,5 +131,21 @@ public class CoachesDao {
 
     public List<CoachesEntity> ShowAll() {
         return this.CouchReposotry.findAll();
+    }
+
+    public CoachesDto returnAllCoachData(Integer coachId) {
+        try {
+            Optional<CoachesEntity>Coach=Optional.ofNullable(this.CouchReposotry.findAllById(coachId));
+            if(Coach.isPresent())
+            {
+                return  CoachesDto.toDto(Coach.get());
+            }
+            else {return new CoachesDto();}
+
+        }
+        catch (Exception e){
+            return new CoachesDto();
+        }
+
     }
 }

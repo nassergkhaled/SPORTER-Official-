@@ -24,28 +24,6 @@ public class GymsDao {
     private PlayersRepo playersRepo;
 
 
-    public List<PlayersEntity>showAllGymPlayers(Integer gymId)
-    {
-       return this.GymRepo.findAllById(gymId).getGymPlayers();
-    }
-
-
-//    public List<?>removeAttributeFromAllObjectsInArrayList(@NotNull List<GymsEntity> arrayList, String attributeName)
-//    {
-//        int counter=arrayList.size();
-//        ArrayList<GymsEntity> newArrayList=new ArrayList<GymsEntity>();
-//        arrayList=(ArrayList<ArrayList>)arrayList;
-//        while (counter!=0)
-//        {
-//            if(arrayList.get(counter-1).contains(attributeName))
-//            {
-//                arrayList.get(counter-1).remove(attributeName);
-//                newArrayList.add(arrayList.get(counter-1));
-//            }
-//
-//        }
-//        return newArrayList;
-//    }
 
 
     public List<GymsDto> viewRecommendedGymsForASpecificPlayer(Integer playerId) {
@@ -81,5 +59,19 @@ public class GymsDao {
         }
     }
 
+    public GymsDto returnAllGymData(Integer gymId) {
+        try {
+            Optional<GymsEntity>Gym=Optional.ofNullable(this.GymRepo.findAllById(gymId));
+            if(Gym.isPresent())
+            {
+                return GymsDto.toDto(Gym.get());
+            }
+            else {return new GymsDto();}
 
+        }
+        catch (Exception e)
+        {
+            return new GymsDto();
+        }
+    }
 }

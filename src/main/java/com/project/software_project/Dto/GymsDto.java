@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Builder
@@ -19,11 +20,13 @@ public class GymsDto {
     private Integer id;
     private String location;
     private String name;
+    private String description;
     private Integer amountmonthly;
     private Integer amountquarterly;
     private Integer amountannual;
     private float rating;
     private List<PlayersEntity> gymPlayers;
+
 
 
     public static GymsDto gymWithoutPlayersOfGym (GymsEntity Gym)
@@ -36,6 +39,7 @@ public class GymsDto {
                 .amountmonthly(Gym.getAmountmonthly())
                 .amountquarterly(Gym.getAmountquarterly())
                 .rating(Gym.getRating())
+                .description(Gym.getDescription())
                 .build();
     }
 
@@ -46,7 +50,20 @@ public class GymsDto {
             GymsDto newGym=new GymsDto();
             newGymsEntityList.add(GymsDto.gymWithoutPlayersOfGym(dto));
         }
-
         return newGymsEntityList;
+    }
+
+    public static GymsDto toDto(GymsEntity Gym) {
+        return GymsDto.builder()
+                .id(Gym.getId())
+                .location(Gym.getLocation())
+                .amountannual(Gym.getAmountannual())
+                .name(Gym.getName())
+                .amountmonthly(Gym.getAmountmonthly())
+                .amountquarterly(Gym.getAmountquarterly())
+                .rating(Gym.getRating())
+                .description(Gym.getDescription())
+                .gymPlayers(Gym.getGymPlayers())
+                .build();
     }
 }

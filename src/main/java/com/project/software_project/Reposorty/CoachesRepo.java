@@ -13,4 +13,6 @@ public interface CoachesRepo extends JpaRepository<CoachesEntity,Integer>
     public boolean existsByPhone(String Phone);
     public List<CoachesEntity>findAll();
     public CoachesEntity findAllByFullname(String coachName);
+
+    public CoachesEntity findAllById(Integer coachId);
 }

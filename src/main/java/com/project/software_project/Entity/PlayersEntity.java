@@ -43,28 +43,6 @@ public class PlayersEntity {
     public int gymid;
     public String city;
 
-    /*
-    public PlayersEntity(Integer id, String phone, String email, String fullname, String password, boolean gender, short strategy, float weight, float height, int age, int goal, int coachid, String oneTimePassword, Date otpRequestedTime, CoachesEntity coach) {
-        this.id = id;
-        this.phone = phone;
-        this.email = email;
-        this.fullname = fullname;
-        this.password = password;
-        this.gender = gender;
-        this.strategy = strategy;
-        this.weight = weight;
-        this.height = height;
-        this.age = age;
-        this.goal = goal;
-        this.oneTimePassword = oneTimePassword;
-        this.otpRequestedTime = otpRequestedTime;
-        Coach = coach;
-
-
-        if(this.coachid==0){ this.coachid = 100; return;}
-        this.coachid = coachid;
-    }*/
-
 
 
     //OTP by Email Code
@@ -76,6 +54,8 @@ public class PlayersEntity {
 
     @Column(name = "otp_requested_time")
     public Date otpRequestedTime;
+
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "coachid",insertable = false,updatable = false)
     //@JsonBackReference

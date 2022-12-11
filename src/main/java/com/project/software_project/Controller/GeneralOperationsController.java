@@ -36,10 +36,27 @@ public class GeneralOperationsController{
             FileUploadResponse response = new FileUploadResponse();
             response.setFileName(fileName);
             response.setSize(size);
-            response.setDownloadUri("/downloadFile/" + filecode);
+            response.setDownloadUri("/Files-Upload/Pictures/" + filecode);
 
             return new ResponseEntity<>(response, HttpStatus.OK);
         }
+
+
+//    @PostMapping("/uploadVideo")
+//        public ResponseEntity<FileUploadResponse> uploadVideo(
+//            @RequestParam("file") MultipartFile multipartFile,
+//            @RequestParam ("filetype") String Type)
+//            throws IOException {
+//        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+//        long size = multipartFile.getSize();
+//        String filecode = FileUploadUtil.saveFile(fileName, multipartFile,Type);
+//        FileUploadResponse response = new FileUploadResponse();
+//        response.setFileName(fileName);
+//        response.setSize(size);
+//        response.setDownloadUri("/Files-Upload/Videos/" + filecode);
+//
+//        return new ResponseEntity<>(response, HttpStatus.OK);
+//    }
     @GetMapping("/downloadFile/{fileCode}")
     public ResponseEntity<?> downloadFile(@PathVariable("fileCode") String fileCode) {
         FileDownloadUtil downloadUtil = new FileDownloadUtil();

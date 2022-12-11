@@ -9,6 +9,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,8 +29,10 @@ public class CoachesDto {
     private int age;
     private short paymentperiod;//0 -->Monthly // 1-->Quarterly // 2-->ANNUAL
     private int amount;
+    private int experience;
     private int goal ;//0--> Learn The Basics// 1-->Get Fitter// 2--> Lose Weight// 3--> Gain Weight//4-->Gain More Flexible
     private List<PlayersEntity> playersOfCoach;
+
 
     public static CoachesDto toDto(CoachesEntity Coach) {
         return CoachesDto.builder()
@@ -61,6 +64,7 @@ public class CoachesDto {
                 .paymentperiod(Coach.getPaymentperiod())
                 .amount(Coach.getAmount())
                 .goal(Coach.getGoal())
+                .experience(Coach.getExperience())
                 .playersOfCoach(Coach.getPlayersOfCoach())
                 .build();
     }
@@ -77,11 +81,10 @@ public class CoachesDto {
                 .paymentperiod(Coach.getPaymentperiod())
                 .amount(Coach.getAmount())
                 .goal(Coach.getGoal())
+                .experience(Coach.getExperience())
                 .build();
 
     }
-
-
 
     public static List<CoachesDto> convertDtoToEntityWithoutPrivateData(List<CoachesEntity> Coach) {
         List<CoachesDto> newCoachesEntityList = new ArrayList<>();

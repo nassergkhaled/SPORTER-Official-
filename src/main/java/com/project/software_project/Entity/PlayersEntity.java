@@ -37,6 +37,7 @@ public class PlayersEntity {
     public float weight;
     public float height;
     public int age;
+    public String guest;
     public int goal ;//0--> Learn The Basics// 1-->Get Fitter// 2--> Lose Weight// 3--> Gain Weight//4-->Gain More Flexible
     //public int gymid;
     public int coachid;

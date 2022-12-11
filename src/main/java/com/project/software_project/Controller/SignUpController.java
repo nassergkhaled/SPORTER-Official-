@@ -9,6 +9,8 @@ import com.project.software_project.Entity.PlayersEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
+
 @RestController
 @RequestMapping(path = "/signup")
 public class SignUpController {
@@ -21,12 +23,14 @@ public class SignUpController {
     @PostMapping(path = "/player")
     public String SignUp(@RequestBody PlayersEntity Player)
     {
+        Player.setGuest("1");
         return this.PlayerDao.SignUpPlayer(Player);
     }
 
     @PostMapping(path = "/coach")
     public String SignUp(@RequestBody CoachesEntity Coach)
     {
+        Coach.setRegistrationyear(LocalDate.now().getYear());
         return this.CoachDao.SignUpCoach(Coach);
     }
 

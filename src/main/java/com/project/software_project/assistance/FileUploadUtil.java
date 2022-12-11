@@ -22,11 +22,11 @@ public class FileUploadUtil {
         switch (Flag) {
             case (1):
                 //Profile Picture Image
-                uploadPath = Paths.get("Files-Upload/Profile-Pictures");
+                uploadPath = Paths.get("Files-Upload/Pictures/Profile-Pictures");
 
             case (2):
                 //Gym Picture Image
-                uploadPath = Paths.get("Files-Upload/Gym-Pictures");
+                uploadPath = Paths.get("Files-Upload/Pictures/Gym-Pictures");
         }
 
         if (!Files.exists(uploadPath)) {
@@ -35,13 +35,52 @@ public class FileUploadUtil {
 
         //String fileCode = RandomStringUtils.randomAlphanumeric(8);
 
+        String response = Type.substring(3, Type.length()) + ".png";
         try (InputStream inputStream = multipartFile.getInputStream()) {
-            Path filePath = uploadPath.resolve(Type.substring(3,Type.length())+".png");
+            Path filePath = uploadPath.resolve(response);
             Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
         } catch (IOException ioe) {
             throw new IOException("Could not save file: " + fileName, ioe);
         }
 
-        return Type.substring(3,Type.length())+".png";
+        return response;
+    }
+
+
+
+
+
+
+
+
+    public static String saveVideo(String fileName, MultipartFile multipartFile,String Type)
+            throws IOException {
+        Path uploadPath = Paths.get("Files-Upload/Videos");// generally
+        int Flag=0;
+        if(Type.startsWith("mv-")) {Flag = 1; /* Meal Video*/}
+        //else if(Type.startsWith("gp-")){Flag = 2; /* Gym Picture*/}
+//            else if(){Flag = 3; /* Diet Picture*/}
+        switch (Flag) {
+            case (1):
+                //Profile Picture Image
+                uploadPath = Paths.get("Files-Upload/Videos/Meal-Videos");
+
+        }
+
+        if (!Files.exists(uploadPath)) {
+            Files.createDirectories(uploadPath);
+        }
+
+        //String fileCode = RandomStringUtils.randomAlphanumeric(8);
+
+        String response = Type.substring(3, Type.length()) + ".mp4";
+        try (InputStream inputStream = multipartFile.getInputStream()) {
+            Path filePath = uploadPath.resolve(response);
+            Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
+        } catch (IOException ioe) {
+            throw new IOException("Could not save file: " + fileName, ioe);
+        }
+
+        return response;
     }
 }

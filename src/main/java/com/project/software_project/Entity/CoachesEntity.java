@@ -1,16 +1,13 @@
 package com.project.software_project.Entity;
 
-//import com.fasterxml.jackson.annotation.JsonManagedReference;
-//import org.codehaus.jackson.annotate.JsonManagedReference;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-//import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+        import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.project.software_project.Dto.CoachesDto;
 import lombok.*;
-
 import javax.persistence.*;
+import java.time.LocalDate;
+
 import java.util.List;
 
 
@@ -39,7 +36,11 @@ public class CoachesEntity
     public short paymentperiod;//0 -->Monthly // 1-->Quarterly // 2-->ANNUAL
     public int amount;
     public int goal ;//0--> Learn The Basics// 1-->Get Fitter// 2--> Lose Weight// 3--> Gain Weight//4-->Gain More Flexible
+    public int registrationyear;
 
+    public int getExperience(){
+        return LocalDate.now().getYear()-registrationyear;
+    }
 
 
     @OneToMany(mappedBy = "Coach")//Note Very Important if you made many relations for the same entity you have to choose the same mapped by name

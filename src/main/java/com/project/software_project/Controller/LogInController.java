@@ -27,13 +27,15 @@ public class LogInController {
 
     @PostMapping("/")
     public LogInResponseBody LogIn(@RequestBody LogInRequestBody Body) {
-        Integer PlayerID=PlayerDao.LoginPlayer(Body.getEmail(), Body.getPassword());
+        Integer PlayerID=PlayerDao.LoginPlayer(Body.getEmail(), Body.getPassword()).getId();
+        String guest=PlayerDao.LoginPlayer(Body.getEmail(),Body.getPassword()).getGuest();
         Integer CoachID=CoachDao.LoginCoach(Body.getEmail(), Body.getPassword());
         Integer AdminID=AdminDao.LoginAdminDao(Body.getEmail(), Body.getPassword());
         LogInResponseBody ResponseBody=new LogInResponseBody();
         if (PlayerID!=0) {
             ResponseBody.setMsg("Success 'Player' ");
             ResponseBody.setID(PlayerID);
+            ResponseBody.setGuest(Integer.parseInt(guest));
             return ResponseBody;
         } else if (CoachID!=0) {
             ResponseBody.setMsg("Success 'Coach'");
@@ -44,7 +46,7 @@ public class LogInController {
             ResponseBody.setID(AdminID);
             return ResponseBody;
         } else {
-            ResponseBody.setMsg("Failed");
+            ResponseBody.setMsg(PlayerID.toString());
             ResponseBody.setID(-1);
             return ResponseBody;
         }

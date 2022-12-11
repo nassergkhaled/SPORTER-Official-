@@ -4,6 +4,7 @@ import com.project.software_project.Entity.PlayersEntity;
 import com.project.software_project.Reposorty.PlayersRepo;
 import com.project.software_project.bodies.EditProfileBody;
 import com.project.software_project.bodies.PhoneDigitsAPIBody;
+import com.project.software_project.bodies.PlayerLogInBody;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
@@ -47,20 +48,30 @@ public class PlayersDao {
         return OTP;
     }
 
-    public Integer LoginPlayer(String email, String password) {
+    public PlayerLogInBody LoginPlayer(String email, String password) {
+        PlayerLogInBody response =new PlayerLogInBody();
         try {
             Optional<PlayersEntity> PlayerEntity;
             PlayerEntity = Optional.ofNullable(PlayerRepository.findAllByEmailAndPassword(email, password));
             if (PlayerEntity.isPresent()) {
-                return PlayerEntity.get().getId();
+                response.setId(PlayerEntity.get().getId());
+                response.setGuest(PlayerEntity.get().getGuest());
             } else {
-                return 0;
+                PlayerEntity=Optional.ofNullable(PlayerRepository.findAllByEmail(email));
+                if(PlayerEntity.isPresent())
+                {
+                 response.setGuest("Invalid Password");
+                }
+                else
+                {
+                    response.setGuest("No Such A User With The Entered Email");
+                }
+               response.setId(0);
             }
         } catch (Exception e) {
-            return 0;
+            response.setId(0);
         }
-
-
+        return response;
     }
 
 
@@ -80,7 +91,7 @@ public class PlayersDao {
                 Player.setGymid(100);
                 Player.setStrategy((short) 3);
             } if (Flag==1) {
-                System.out.println("I am an application player");
+                //System.out.println("I am an application player");
                 Player.setStrategy((short) 2);
             }
             this.PlayerRepository.save(Player);

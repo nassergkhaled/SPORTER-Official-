@@ -46,7 +46,7 @@ public class LogInController {
             ResponseBody.setID(AdminID);
             return ResponseBody;
         } else {
-            ResponseBody.setMsg(PlayerID.toString());
+            ResponseBody.setMsg("Failed");
             ResponseBody.setID(-1);
             return ResponseBody;
         }

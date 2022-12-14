@@ -74,4 +74,15 @@ public class GymsDao {
             return new GymsDto();
         }
     }
+
+    public String addGym(GymsEntity gym) {
+        try {
+            this.GymRepo.save(gym);
+            return "SUCCESS";
+        }
+        catch (Exception e)
+        {
+            return "Failed";
+        }
+    }
 }

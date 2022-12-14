@@ -4,10 +4,8 @@ import com.project.software_project.Dao.GymsDao;
 import com.project.software_project.Dto.GymsDto;
 import com.project.software_project.Entity.GymsEntity;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
 
 
@@ -31,5 +29,10 @@ public class GymsController {
     public GymsDto returnAllGymData(@PathVariable (name = "gymid") Integer gymId)
     {
         return this.gymsDao.returnAllGymData(gymId);
+    }
+    @PostMapping(path = "/add")
+    public String addGym(@RequestBody GymsEntity Gym)
+    {
+        return this.gymsDao.addGym(Gym);
     }
 }

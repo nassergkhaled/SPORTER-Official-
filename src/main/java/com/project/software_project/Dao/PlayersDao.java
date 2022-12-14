@@ -1,6 +1,8 @@
 package com.project.software_project.Dao;
 
+import com.project.software_project.Entity.GymsEntity;
 import com.project.software_project.Entity.PlayersEntity;
+import com.project.software_project.Reposorty.GymsRepo;
 import com.project.software_project.Reposorty.PlayersRepo;
 import com.project.software_project.bodies.EditProfileBody;
 import com.project.software_project.bodies.PhoneDigitsAPIBody;
@@ -21,6 +23,8 @@ import java.util.concurrent.ThreadLocalRandom;
 public class PlayersDao {
     @Autowired
     private PlayersRepo PlayerRepository;
+    @Autowired
+    private  GymsRepo gymsRepo;
     @Autowired
     JavaMailSender mailSender;
     @Autowired
@@ -86,6 +90,11 @@ public class PlayersDao {
                 Flag++;
                 Player.setCoachid(100);
                 Player.setStrategy((short) 1);
+                GymsEntity newGym=gymsRepo.findAllById(Player.getGymid());
+                int oldNumberOfPlayers =newGym.numberOfPlayers;
+                oldNumberOfPlayers++;
+                newGym.setNumberOfPlayers(oldNumberOfPlayers);
+                this.gymsRepo.save(newGym);
             }  if (Player.getGymid()<101 || Player.getGymid()>999) {
                 Flag++;
                 Player.setGymid(100);

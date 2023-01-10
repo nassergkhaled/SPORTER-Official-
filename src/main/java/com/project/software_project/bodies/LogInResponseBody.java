@@ -7,4 +7,5 @@ public class LogInResponseBody {
     String Msg;
     Integer ID;
     int guest;
+    String token;
 }

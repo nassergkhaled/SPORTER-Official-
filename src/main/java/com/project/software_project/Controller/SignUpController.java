@@ -3,6 +3,7 @@ package com.project.software_project.Controller;
 import com.project.software_project.Dao.CoachesDao;
 import com.project.software_project.Dao.PlayersDao;
 import com.project.software_project.bodies.PhoneDigitsAPIBody;
+import com.project.software_project.bodies.PlayerLogInBody;
 import com.project.software_project.bodies.StringBody;
 import com.project.software_project.Entity.CoachesEntity;
 import com.project.software_project.Entity.PlayersEntity;
@@ -20,10 +21,10 @@ public class SignUpController {
     private CoachesDao CoachDao;
 
 
+
     @PostMapping(path = "/player")
-    public String SignUp(@RequestBody PlayersEntity Player)
-    {
-        Player.setGuest("1");
+    public String SignUp(@RequestBody PlayersEntity Player) {
+        //Player.setGuest("1");
         return this.PlayerDao.SignUpPlayer(Player);
     }
 
@@ -53,6 +54,7 @@ public class SignUpController {
         }
         catch (Exception e)
         {
+            System.out.println(e.getMessage());
             return -1;
         }
     }

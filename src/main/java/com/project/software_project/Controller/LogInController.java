@@ -7,8 +7,10 @@ import com.project.software_project.bodies.LogInRequestBody;
 import com.project.software_project.Entity.CoachesEntity;
 import com.project.software_project.Entity.PlayersEntity;
 import com.project.software_project.bodies.LogInResponseBody;
+import com.project.software_project.bodies.PlayerLogInBody;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,31 +28,32 @@ public class LogInController {
 
 
     @PostMapping("/")
-    public LogInResponseBody LogIn(@RequestBody LogInRequestBody Body) {
-        Integer PlayerID=PlayerDao.LoginPlayer(Body.getEmail(), Body.getPassword()).getId();
-        String guest=PlayerDao.LoginPlayer(Body.getEmail(),Body.getPassword()).getGuest();
+    public ResponseEntity<LogInResponseBody> LogIn(@RequestBody LogInRequestBody Body) {
+        PlayerLogInBody playerResponse = PlayerDao.LoginPlayer(Body.getEmail(), Body.getPassword());
         Integer CoachID=CoachDao.LoginCoach(Body.getEmail(), Body.getPassword());
         Integer AdminID=AdminDao.LoginAdminDao(Body.getEmail(), Body.getPassword());
-        LogInResponseBody ResponseBody=new LogInResponseBody();
-        if (PlayerID!=0) {
-            ResponseBody.setMsg("Success 'Player' ");
-            ResponseBody.setID(PlayerID);
-            ResponseBody.setGuest(Integer.parseInt(guest));
-            return ResponseBody;
-        } else if (CoachID!=0) {
-            ResponseBody.setMsg("Success 'Coach'");
-            ResponseBody.setID(CoachID);
-            return ResponseBody;
-        } else if (AdminID!=0) {
-            ResponseBody.setMsg("Success 'Admin'");
-            ResponseBody.setID(AdminID);
-            return ResponseBody;
+        LogInResponseBody response = new LogInResponseBody();
+        if (playerResponse.getId() != 0) {
+            response.setMsg("Success 'Player' ");
+            response.setID(playerResponse.getId());
+            response.setGuest(Integer.parseInt(playerResponse.getGuest()));
+            response.setToken(playerResponse.getToken());
+            return ResponseEntity.ok().header("Authorization", "Bearer " + playerResponse.getToken()).body(response);
+        } else if (CoachID != 0) {
+            response.setMsg("Success 'Coach'");
+            response.setID(CoachID);
+            return ResponseEntity.ok().body(response);
+        } else if (AdminID != 0) {
+            response.setMsg("Success 'Admin'");
+            response.setID(AdminID);
+            return ResponseEntity.ok().body(response);
         } else {
-            ResponseBody.setMsg("Failed");
-            ResponseBody.setID(-1);
-            return ResponseBody;
+            response.setMsg("Failed");
+            response.setID(-1);
+            return ResponseEntity.ok().body(response);
         }
     }
+
     @GetMapping(path = "/view-all")
     public List<CoachesEntity> viewAllCoaches()
     {

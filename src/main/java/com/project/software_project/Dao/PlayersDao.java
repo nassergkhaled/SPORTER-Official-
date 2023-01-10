@@ -1,7 +1,9 @@
 package com.project.software_project.Dao;
 
+import com.project.software_project.Entity.CoachesEntity;
 import com.project.software_project.Entity.GymsEntity;
 import com.project.software_project.Entity.PlayersEntity;
+import com.project.software_project.Reposorty.CoachesRepo;
 import com.project.software_project.Reposorty.GymsRepo;
 import com.project.software_project.Reposorty.PlayersRepo;
 import com.project.software_project.bodies.EditProfileBody;
@@ -25,6 +27,8 @@ public class PlayersDao {
     private PlayersRepo PlayerRepository;
     @Autowired
     private  GymsRepo gymsRepo;
+    @Autowired
+    private CoachesRepo coachesRepo;
     @Autowired
     JavaMailSender mailSender;
     @Autowired
@@ -86,7 +90,16 @@ public class PlayersDao {
                 return "Email Is Already In Use";
             } else if (this.PlayerRepository.existsByPhone(Player.getPhone())) {
                 return "This Phone Number Is Already in Use ";
-            }  if ((Player.getCoachid() < 101) || (Player.getCoachid() > 999)) {
+            }
+            if(Player.getGuest().equals("1")){
+                //Guest
+                Player.setCoachid(100);
+                Player.setGymid(100);
+                this.PlayerRepository.save(Player);
+                return " Success + Guest ";
+            }
+            if ((Player.getCoachid() < 101) || (Player.getCoachid() > 999)) {
+                //Gym Player
                 Flag++;
                 Player.setCoachid(100);
                 Player.setStrategy((short) 1);
@@ -96,17 +109,17 @@ public class PlayersDao {
                 newGym.setNumberOfPlayers(oldNumberOfPlayers);
                 this.gymsRepo.save(newGym);
             }  if (Player.getGymid()<101 || Player.getGymid()>999) {
+                //Coach Player
                 Flag++;
                 Player.setGymid(100);
                 Player.setStrategy((short) 3);
             } if (Flag==1) {
-                //System.out.println("I am an application player");
+                //Application player
                 Player.setStrategy((short) 2);
             }
             this.PlayerRepository.save(Player);
             return " Success";
         } catch (Exception e) {
-            //System.out.println(e.getMessage());
             return "Failed";
         }
 
@@ -179,6 +192,27 @@ public class PlayersDao {
 
     public List<PlayersEntity> ShowAll() {
         return this.PlayerRepository.findAll();
+    }
+
+    public String signPlayerToACoach(Integer playerId, Integer coachId) {
+        try {
+            Optional<PlayersEntity>player = Optional.ofNullable(this.PlayerRepository.findAllById(playerId));
+            Optional<CoachesEntity>coach=Optional.ofNullable(this.coachesRepo.findAllById(coachId));
+            if(player.isEmpty()){return "No Player With Given Id";}
+            if(coach.isPresent())
+            {
+                player.get().setGuest("0");
+                player.get().setStrategy((short) 3);
+                player.get().setCoachid(coachId);
+                this.PlayerRepository.save(player.get());
+                return "Success";
+            }
+          else{return "No Coach With Given Id";}
+        }
+        catch (Exception e)
+        {
+            return "Failed";
+        }
     }
 }
 

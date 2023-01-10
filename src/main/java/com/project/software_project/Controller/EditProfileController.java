@@ -32,4 +32,5 @@ public class EditProfileController {
                                @RequestParam String text) throws MessagingException, UnsupportedEncodingException {
         return this.GeneralDao.SendFeedBack(email,name,text);
     }
+
 }

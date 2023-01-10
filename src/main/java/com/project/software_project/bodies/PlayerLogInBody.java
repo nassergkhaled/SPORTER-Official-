@@ -6,4 +6,5 @@ import lombok.Data;
 public class PlayerLogInBody {
     int id;
     String guest;
+    String token;
 }

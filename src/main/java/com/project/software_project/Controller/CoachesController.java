@@ -5,6 +5,7 @@ import com.project.software_project.Dao.CoachesDao;
 import com.project.software_project.Dao.GymsDao;
 import com.project.software_project.Dto.CoachesDto;
 import com.project.software_project.Dto.GymsDto;
+import com.project.software_project.Dto.PlayersDto;
 import com.project.software_project.Entity.GymsEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,8 +33,13 @@ public class CoachesController {
 //        return this.gymsDao.viewRecommendedGymsForASpecificPlayer(playerId);
 //    }
     @GetMapping(path = "/{coachid}")
-    public CoachesDto returnAllGymData(@PathVariable (name = "coachid") Integer coachId)
+    public CoachesDto returnAllCoachData(@PathVariable (name = "coachid") Integer coachId)
     {
         return this.coachsDao.returnAllCoachData(coachId);
+    }
+    @GetMapping(path = "getplayers/{id}")
+    public List<PlayersDto> getCoachPlayers (@PathVariable (name = "id") Integer coachId)
+    {
+        return this.coachsDao.returnCoachPlayers(coachId);
     }
 }

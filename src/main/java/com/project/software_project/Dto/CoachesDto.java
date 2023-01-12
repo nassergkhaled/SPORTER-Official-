@@ -90,7 +90,6 @@ public class CoachesDto {
         List<CoachesDto> newCoachesEntityList = new ArrayList<>();
 
         for (CoachesEntity dto : Coach){
-            GymsDto newGym=new GymsDto();
             newCoachesEntityList.add(CoachesDto.toDtoWithoutPrivateDataNorPlayers(dto));
         }
         return newCoachesEntityList;

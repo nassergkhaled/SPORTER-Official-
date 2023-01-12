@@ -1,5 +1,6 @@
 package com.project.software_project.Dao;
 
+import com.project.software_project.Dto.PlayersDto;
 import com.project.software_project.Entity.CoachesEntity;
 import com.project.software_project.Entity.GymsEntity;
 import com.project.software_project.Entity.PlayersEntity;
@@ -212,6 +213,47 @@ public class PlayersDao {
         catch (Exception e)
         {
             return "Failed";
+        }
+    }
+
+    public String signPlayerToAGym(Integer playerId, Integer gymid)
+    {
+        try {
+            Optional<PlayersEntity>player = Optional.ofNullable(this.PlayerRepository.findAllById(playerId));
+            Optional<GymsEntity>gym=Optional.ofNullable(this.gymsRepo.findAllById(gymid));
+            if(player.isEmpty()){return "No Player With Given Id";}
+            if(gym.isPresent())
+            {
+                player.get().setGuest("0");
+                player.get().setStrategy((short) 1);
+                player.get().setGymid(gymid);
+                this.PlayerRepository.save(player.get());
+                return "Success";
+            }
+            else{return "No Gym With Given Id";}
+        }
+        catch (Exception e)
+        {
+            return "Failed";
+        }
+    }
+
+    public PlayersDto getDataFromEmail(String email) {
+        try
+        {
+            Optional<PlayersEntity> player = Optional.ofNullable(this.PlayerRepository.findAllByEmail(email));
+            if(player.isEmpty())
+            {
+                return PlayersDto.toDtoWithoutCoachAndGymEntity(new PlayersEntity());
+            }
+            else
+        {
+            return PlayersDto.toDtoWithoutCoachAndGymEntity(player.get());
+        }
+        }
+        catch (Exception e)
+        {
+            return PlayersDto.toDtoWithoutCoachAndGymEntity(new PlayersEntity());
         }
     }
 }

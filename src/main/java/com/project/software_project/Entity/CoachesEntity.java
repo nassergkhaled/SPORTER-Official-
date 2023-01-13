@@ -47,22 +47,22 @@ public class CoachesEntity
     @OneToMany(mappedBy = "Coach")//Note Very Important if you made many relations for the same entity you have to choose the same mapped by name
     private List<PlayersEntity> playersOfCoach;
 
-    public static CoachesEntity toDto(CoachesDto Coach) {
-        return CoachesEntity.builder()
-                .id(Coach.getId())
-                .phone(Coach.getPhone())
-                .email(Coach.getEmail())
-                .fullname(Coach.getFullname())
-                .password(Coach.getPassword())
-                .gender(Coach.isGender())
-                .weight(Coach.getWeight())
-                .height(Coach.getHeight())
-                .age(Coach.getAge())
-                .paymentperiod(Coach.getPaymentperiod())
-                .amount(Coach.getAmount())
-                .goal(Coach.getGoal())
-                .playersOfCoach(Coach.getPlayersOfCoach())
-                .build();
-    }
+//    public static CoachesEntity toDto(CoachesDto Coach) {
+//        return CoachesEntity.builder()
+//                .id(Coach.getId())
+//                .phone(Coach.getPhone())
+//                .email(Coach.getEmail())
+//                .fullname(Coach.getFullname())
+//                .password(Coach.getPassword())
+//                .gender(Coach.isGender())
+//                .weight(Coach.getWeight())
+//                .height(Coach.getHeight())
+//                .age(Coach.getAge())
+//                .paymentperiod(Coach.getPaymentperiod())
+//                .amount(Coach.getAmount())
+//                .goal(Coach.getGoal())
+//                .playersOfCoach(Coach.getPlayersOfCoachII())
+//                .build();
+//    }
 
 }

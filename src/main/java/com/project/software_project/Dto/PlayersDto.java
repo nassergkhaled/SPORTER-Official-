@@ -1,3 +1,4 @@
+
 package com.project.software_project.Dto;
 
 import com.project.software_project.Entity.CoachesEntity;
@@ -79,14 +80,28 @@ public class PlayersDto {
                 .path(player.getPath())
                 .build();
     }
-    public static List<PlayersDto> convertDtoToEntity(List<PlayersEntity> player) {
+    public static List<PlayersDto> convertDtoToEntity(List<PlayersEntity> players) {
         List<PlayersDto> newPlayersEntityList = new ArrayList<>();
 
-        for (PlayersEntity dto : player){
+        for (PlayersEntity dto : players){
             newPlayersEntityList.add(PlayersDto.toDtoWithoutCoachAndGymEntity(dto));
         }
         return newPlayersEntityList;
     }
 
 
+    public static List<PlayersDto> onlyNames(List<PlayersEntity> playersOfCoach) {
+        List<PlayersDto> newPlayersEntityList = new ArrayList<>();
+
+        for (PlayersEntity dto : playersOfCoach){
+            newPlayersEntityList.add(PlayersDto.onlyNamesDto(dto));
+        }
+        return newPlayersEntityList;
+    }
+
+    private static PlayersDto onlyNamesDto(PlayersEntity dto) {
+        return PlayersDto.builder()
+                .fullname(dto.getFullname())
+                .build();
+    }
 }

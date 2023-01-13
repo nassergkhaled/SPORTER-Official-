@@ -142,9 +142,9 @@ public class CoachesDao {
         }
     }
 
-    public CoachesDto returnAllCoachData(Integer coachId) {
+    public CoachesDto returnAllCoachData(String email) {
         try {
-            Optional<CoachesEntity>Coach=Optional.ofNullable(this.couchReposotry.findAllById(coachId));
+            Optional<CoachesEntity>Coach=Optional.ofNullable(this.couchReposotry.findAllByEmail(email));
             if(Coach.isPresent())
             {
                 return  CoachesDto.toDtoWithoutPrivateData(Coach.get());
@@ -171,6 +171,21 @@ public class CoachesDao {
         catch (Exception e)
         {
             return new ArrayList<>();
+        }
+    }
+
+    public CoachesDto returnAllCoachData(Integer id) {
+        try {
+            Optional<CoachesEntity>Coach=Optional.ofNullable(this.couchReposotry.findAllById(id));
+            if(Coach.isPresent())
+            {
+                return  CoachesDto.toDtoWithoutPrivateData(Coach.get());
+            }
+            else {return new CoachesDto();}
+
+        }
+        catch (Exception e){
+            return new CoachesDto();
         }
     }
 }

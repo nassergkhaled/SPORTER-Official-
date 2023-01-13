@@ -40,4 +40,9 @@ public class PlayerController {
     {
         return this.playersDao.getDataFromEmail(email);
     }
+    @GetMapping (value = "/{email}")
+    public PlayersDto getPlayerInfo(@PathVariable (name = "email") String email)
+    {
+        return this.playersDao.getPlayerInfo(email);
+    }
 }

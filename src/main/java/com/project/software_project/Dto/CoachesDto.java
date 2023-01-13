@@ -1,3 +1,4 @@
+
 package com.project.software_project.Dto;
 
 import com.project.software_project.Entity.CoachesEntity;
@@ -32,7 +33,7 @@ public class CoachesDto {
     public String path;
     private int experience;
     private int goal ;//0--> Learn The Basics// 1-->Get Fitter// 2--> Lose Weight// 3--> Gain Weight//4-->Gain More Flexible
-    private List<PlayersEntity> playersOfCoach;
+    private List<PlayersDto> playersOfCoach;
 
 
     public static CoachesDto toDto(CoachesEntity Coach) {
@@ -50,7 +51,7 @@ public class CoachesDto {
                 .amount(Coach.getAmount())
                 .path(Coach.getPath())
                 .goal(Coach.getGoal())
-                .playersOfCoach(Coach.getPlayersOfCoach())
+                .playersOfCoach(PlayersDto.onlyNames(Coach.getPlayersOfCoach()))
                 .build();
     }
 
@@ -68,7 +69,7 @@ public class CoachesDto {
                 .path(Coach.getPath())
                 .goal(Coach.getGoal())
                 .experience(Coach.getExperience())
-                .playersOfCoach(Coach.getPlayersOfCoach())
+                .playersOfCoach(PlayersDto.onlyNames(Coach.getPlayersOfCoach()))
                 .build();
     }
     public static CoachesDto toDtoWithoutPrivateDataNorPlayers(CoachesEntity Coach)
@@ -98,4 +99,6 @@ public class CoachesDto {
         }
         return newCoachesEntityList;
     }
+
+
 }

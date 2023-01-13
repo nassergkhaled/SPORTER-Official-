@@ -1,5 +1,6 @@
 package com.project.software_project.Dao;
 
+import ch.qos.logback.core.encoder.EchoEncoder;
 import com.project.software_project.Dto.PlayersDto;
 import com.project.software_project.Entity.CoachesEntity;
 import com.project.software_project.Entity.GymsEntity;
@@ -254,6 +255,24 @@ public class PlayersDao {
         catch (Exception e)
         {
             return PlayersDto.toDtoWithoutCoachAndGymEntity(new PlayersEntity());
+        }
+    }
+
+    public PlayersDto getPlayerInfo(String email) {
+        try {
+            Optional<PlayersEntity> player =Optional.ofNullable(this.PlayerRepository.findAllByEmail(email));
+            if(player.isEmpty())
+            {
+                return new PlayersDto();
+            }
+            else
+            {
+                return PlayersDto.toDtoWithoutCoachAndGymEntity(player.get());
+            }
+        }
+        catch (Exception e)
+        {
+            return new PlayersDto();
         }
     }
 }

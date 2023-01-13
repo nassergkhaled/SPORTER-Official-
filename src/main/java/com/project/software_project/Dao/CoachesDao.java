@@ -158,13 +158,13 @@ public class CoachesDao {
 
     }
 
-    public List<PlayersDto> returnCoachPlayers(Integer coachId) {
+    public List<PlayersDto> returnCoachPlayers(String email) {
         try {
-            Optional<CoachesEntity> coach=Optional.ofNullable(this.couchReposotry.findAllById(coachId));
+            Optional<CoachesEntity> coach=Optional.ofNullable(this.couchReposotry.findAllByEmail(email));
             if(coach.isEmpty()){return new ArrayList<>();}
             else
             {
-                return PlayersDto.convertDtoToEntity(this.couchReposotry.findAllById(coachId).getPlayersOfCoach());
+                return PlayersDto.convertDtoToEntity(this.couchReposotry.findAllByEmail(email).getPlayersOfCoach());
             }
 
         }

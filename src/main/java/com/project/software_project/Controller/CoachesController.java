@@ -37,9 +37,9 @@ public class CoachesController {
     {
         return this.coachsDao.returnAllCoachData(coachId);
     }
-    @GetMapping(path = "getplayers/{id}")
-    public List<PlayersDto> getCoachPlayers (@PathVariable (name = "id") Integer coachId)
+    @GetMapping(path = "getplayers/{email}")
+    public List<PlayersDto> getCoachPlayers (@PathVariable (name = "email") String email)
     {
-        return this.coachsDao.returnCoachPlayers(coachId);
+        return this.coachsDao.returnCoachPlayers(email);
     }
 }

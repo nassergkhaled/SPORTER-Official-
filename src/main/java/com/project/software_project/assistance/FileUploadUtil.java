@@ -16,18 +16,9 @@ public class FileUploadUtil {
             throws IOException {
         Path uploadPath = Paths.get("Files-Upload");// generally
         Integer Flag=0;
-        if(Type.startsWith("pp-")) {Flag = 1; /* Profile Picture*/}
-            else if(Type.startsWith("gp-")){Flag = 2; /* Gym Picture*/}
-//            else if(){Flag = 3; /* Diet Picture*/}
-        switch (Flag) {
-            case (1):
-                //Profile Picture Image
-                uploadPath = Paths.get("Files-Upload/Pictures/Profile-Pictures");
-
-            case (2):
-                //Gym Picture Image
-                uploadPath = Paths.get("Files-Upload/Pictures/Gym-Pictures");
-        }
+        if(Type.startsWith("pp-")) {Flag = 1;  uploadPath = Paths.get("Files-Upload/Pictures/Profile-Pictures");/* Profile Picture*/}
+            else if(Type.startsWith("gp-")){Flag = 2;  uploadPath = Paths.get("Files-Upload/Pictures/Gym-Pictures"); /* Gym Picture*/}
+            else if(Type.startsWith("cp-")){Flag = 3;  uploadPath=Paths.get("Files-Upload/Pictures/Coach-Pictures"); /* Coach Picture*/}
 
         if (!Files.exists(uploadPath)) {
             Files.createDirectories(uploadPath);

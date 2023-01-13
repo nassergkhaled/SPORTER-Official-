@@ -30,6 +30,7 @@ public class GymsEntity
     public Integer amountquarterly;
     public Integer amountannual;
     public float rating;
+    public String path;
     @Column(name = "numberofplayers")
     public int numberOfPlayers;
 

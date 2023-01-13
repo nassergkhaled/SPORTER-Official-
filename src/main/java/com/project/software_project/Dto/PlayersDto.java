@@ -33,6 +33,7 @@ public class PlayersDto {
     public String city;
     public CoachesEntity coach;
     public GymsEntity gymentity;
+    public String path;
     public static PlayersDto toDto(PlayersEntity player)
     {
         return PlayersDto.builder()
@@ -51,6 +52,7 @@ public class PlayersDto {
                 .coachid(player.getCoachid())
                 .gymid(player.getGymid())
                 .city(player.getCity())
+                .path(player.getPath())
                 .coach(player.getCoach())
                 .gymentity(player.getGymentity())
                 .build();
@@ -74,6 +76,7 @@ public class PlayersDto {
                 .coachid(player.getCoachid())
                 .gymid(player.getGymid())
                 .city(player.getCity())
+                .path(player.getPath())
                 .build();
     }
     public static List<PlayersDto> convertDtoToEntity(List<PlayersEntity> player) {

@@ -43,6 +43,7 @@ public class PlayersEntity {
     public int coachid;
     public int gymid;
     public String city;
+    public String path;
 
 
 

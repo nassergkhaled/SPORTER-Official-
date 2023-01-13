@@ -29,6 +29,7 @@ public class CoachesDto {
     private int age;
     private short paymentperiod;//0 -->Monthly // 1-->Quarterly // 2-->ANNUAL
     private int amount;
+    public String path;
     private int experience;
     private int goal ;//0--> Learn The Basics// 1-->Get Fitter// 2--> Lose Weight// 3--> Gain Weight//4-->Gain More Flexible
     private List<PlayersEntity> playersOfCoach;
@@ -47,6 +48,7 @@ public class CoachesDto {
                 .age(Coach.getAge())
                 .paymentperiod(Coach.getPaymentperiod())
                 .amount(Coach.getAmount())
+                .path(Coach.getPath())
                 .goal(Coach.getGoal())
                 .playersOfCoach(Coach.getPlayersOfCoach())
                 .build();
@@ -63,6 +65,7 @@ public class CoachesDto {
                 .age(Coach.getAge())
                 .paymentperiod(Coach.getPaymentperiod())
                 .amount(Coach.getAmount())
+                .path(Coach.getPath())
                 .goal(Coach.getGoal())
                 .experience(Coach.getExperience())
                 .playersOfCoach(Coach.getPlayersOfCoach())
@@ -80,6 +83,7 @@ public class CoachesDto {
                 .age(Coach.getAge())
                 .paymentperiod(Coach.getPaymentperiod())
                 .amount(Coach.getAmount())
+                .path(Coach.getPath())
                 .goal(Coach.getGoal())
                 .experience(Coach.getExperience())
                 .build();

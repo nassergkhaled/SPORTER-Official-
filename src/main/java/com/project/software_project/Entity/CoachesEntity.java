@@ -37,6 +37,7 @@ public class CoachesEntity
     public int amount;
     public int goal ;//0--> Learn The Basics// 1-->Get Fitter// 2--> Lose Weight// 3--> Gain Weight//4-->Gain More Flexible
     public int registrationyear;
+    public String path;
 
     public int getExperience(){
         return LocalDate.now().getYear()-registrationyear;

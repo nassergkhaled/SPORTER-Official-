@@ -25,6 +25,7 @@ public class GymsDto {
     private Integer amountquarterly;
     private Integer amountannual;
     private float rating;
+    public String path;
     private List<PlayersEntity> gymPlayers;
 
 
@@ -39,6 +40,7 @@ public class GymsDto {
                 .amountmonthly(Gym.getAmountmonthly())
                 .amountquarterly(Gym.getAmountquarterly())
                 .rating(Gym.getRating())
+                .path(Gym.getPath())
                 .description(Gym.getDescription())
                 .build();
     }
@@ -62,6 +64,7 @@ public class GymsDto {
                 .amountmonthly(Gym.getAmountmonthly())
                 .amountquarterly(Gym.getAmountquarterly())
                 .rating(Gym.getRating())
+                .path(Gym.getPath())
                 .description(Gym.getDescription())
                 .gymPlayers(Gym.getGymPlayers())
                 .build();

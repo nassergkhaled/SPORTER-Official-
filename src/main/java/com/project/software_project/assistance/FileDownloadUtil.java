@@ -17,6 +17,7 @@ public class FileDownloadUtil {
         Path dirPath = Paths.get("Files-Upload");
         if(fileCode.startsWith("pp-")){dirPath = Paths.get("Files-Upload/Pictures/Profile-Pictures");}
             else if(fileCode.startsWith("gp-")){dirPath = Paths.get("Files-Upload/Pictures/Gym-Pictures");}
+        else if(fileCode.startsWith("cp-")){dirPath = Paths.get("Files-Upload/Pictures/Coach-Pictures");}
         return getResource(fileCode, dirPath);
     }
 

@@ -2,6 +2,7 @@ package com.project.software_project.Dao;
 
 import com.project.software_project.Dto.CoachesDto;
 import com.project.software_project.Dto.PlayersDto;
+import com.project.software_project.bodies.EditProfileBody;
 import com.project.software_project.bodies.PhoneDigitsAPIBody;
 import com.project.software_project.bodies.StringBody;
 import com.project.software_project.Entity.CoachesEntity;
@@ -186,6 +187,31 @@ public class CoachesDao {
         }
         catch (Exception e){
             return new CoachesDto();
+        }
+    }
+
+    public String editInfo(EditProfileBody body) {
+        try {
+            Optional <CoachesEntity> coach =Optional.ofNullable(this.couchReposotry.findAllByEmail(body.getEmail()));
+            if(coach.isEmpty())
+            {
+                coach=Optional.ofNullable(this.couchReposotry.findAllByPhone(body.getPhone()));
+                if(coach.isEmpty()){return "You Can't Edit Phone & Email At The Same Time ";}
+                coach.get().setEmail(body.getEmail());
+            }
+            else
+            {
+                coach.get().setPhone(body.getPhone());
+            }
+            coach.get().setGoal(body.getGoal());
+            coach.get().setFullname(body.getName());
+            this.couchReposotry.save(coach.get());
+            return "Success";
+
+        }
+        catch (Exception e )
+        {
+            return "Failed";
         }
     }
 }

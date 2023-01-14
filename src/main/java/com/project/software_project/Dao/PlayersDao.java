@@ -1,6 +1,5 @@
 package com.project.software_project.Dao;
 
-import ch.qos.logback.core.encoder.EchoEncoder;
 import com.project.software_project.Dto.PlayersDto;
 import com.project.software_project.Entity.CoachesEntity;
 import com.project.software_project.Entity.GymsEntity;
@@ -145,8 +144,8 @@ public class PlayersDao {
 
     public String EditInfo(EditProfileBody body) {
         try {
-            Optional<PlayersEntity> Player;
-            Player = Optional.ofNullable(this.PlayerRepository.findAllByEmail(body.getEmail()));
+            Optional<PlayersEntity> Player = Optional.ofNullable(this.PlayerRepository.findByEmail(body.getEmail()));
+            System.out.println(Player.toString());
             if (Player.isEmpty()) {
                 Player = Optional.ofNullable(this.PlayerRepository.findAllByPhone(body.getPhone()));
                 if (Player.isPresent()) {
@@ -170,7 +169,7 @@ public class PlayersDao {
         }
     }
 
-    public PhoneDigitsAPIBody phonedigitsplayer(String email) {
+    public PhoneDigitsAPIBody phoneDigitsPlayer(String email) {
         PhoneDigitsAPIBody Response = new PhoneDigitsAPIBody();
         try {
             Optional<PlayersEntity> Player;

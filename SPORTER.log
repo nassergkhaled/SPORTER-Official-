@@ -1,418 +1,112 @@
-2023-01-13 00:29:29.216  INFO 1202 --- [main] c.p.s.SoftwareProjectApplication         : Starting SoftwareProjectApplication using Java 19.0.1 on MacBook-Pro with PID 1202 (/Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-/target/classes started by mbpro in /Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-)
-2023-01-13 00:29:29.226  INFO 1202 --- [main] c.p.s.SoftwareProjectApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-01-13 00:29:30.333  INFO 1202 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-13 00:29:30.389  INFO 1202 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 4 JPA repository interfaces.
-2023-01-13 00:29:30.836  INFO 1202 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-01-13 00:29:30.842  INFO 1202 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-13 00:29:30.843  INFO 1202 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-01-13 00:29:30.931  INFO 1202 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-13 00:29:30.933  INFO 1202 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1611 ms
-2023-01-13 00:29:31.260  INFO 1202 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-13 00:29:31.421  INFO 1202 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-13 00:29:31.460  INFO 1202 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-13 00:29:31.505  INFO 1202 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
-2023-01-13 00:29:31.671  INFO 1202 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-13 00:29:31.740  INFO 1202 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-01-13 00:29:32.209  INFO 1202 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-13 00:29:32.215  INFO 1202 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 00:29:32.657  WARN 1202 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-13 00:29:33.107  INFO 1202 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2023-01-13 00:29:33.177  INFO 1202 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2023-01-13 00:29:33.198  INFO 1202 --- [main] c.p.s.SoftwareProjectApplication         : Started SoftwareProjectApplication in 4.461 seconds (JVM running for 5.257)
-2023-01-13 00:29:33.259  WARN 1202 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=SPORTER, managementUrl=http://macbook-pro:8082/actuator, healthUrl=http://macbook-pro:8082/actuator/health, serviceUrl=http://macbook-pro:8082/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": Connection refused; nested exception is java.net.ConnectException: Connection refused. Further attempts are logged on DEBUG level
-2023-01-13 00:29:33.473  INFO 1202 --- [RMI TCP Connection(2)-192.168.1.132] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-13 00:29:33.473  INFO 1202 --- [RMI TCP Connection(2)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-13 00:29:33.476  INFO 1202 --- [RMI TCP Connection(2)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2023-01-13 00:45:40.410  INFO 1202 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 00:45:40.412  INFO 1202 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-01-13 00:45:40.416  INFO 1202 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-01-13 00:45:46.353  INFO 2379 --- [main] c.p.s.SoftwareProjectApplication         : Starting SoftwareProjectApplication using Java 19.0.1 on MacBook-Pro with PID 2379 (/Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-/target/classes started by mbpro in /Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-)
-2023-01-13 00:45:46.355  INFO 2379 --- [main] c.p.s.SoftwareProjectApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-01-13 00:45:47.402  INFO 2379 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-13 00:45:47.451  INFO 2379 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 4 JPA repository interfaces.
-2023-01-13 00:45:47.903  INFO 2379 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-01-13 00:45:47.909  INFO 2379 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-13 00:45:47.909  INFO 2379 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-01-13 00:45:47.991  INFO 2379 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-13 00:45:47.991  INFO 2379 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1576 ms
-2023-01-13 00:45:48.327  INFO 2379 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-13 00:45:48.482  INFO 2379 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-13 00:45:48.523  INFO 2379 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-13 00:45:48.563  INFO 2379 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
-2023-01-13 00:45:48.732  INFO 2379 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-13 00:45:48.796  INFO 2379 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-01-13 00:45:49.382  INFO 2379 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-13 00:45:49.389  INFO 2379 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 00:45:49.858  WARN 2379 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-13 00:45:50.315  INFO 2379 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2023-01-13 00:45:50.397  INFO 2379 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2023-01-13 00:45:50.418  INFO 2379 --- [main] c.p.s.SoftwareProjectApplication         : Started SoftwareProjectApplication in 4.481 seconds (JVM running for 5.194)
-2023-01-13 00:45:50.479  WARN 2379 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=SPORTER, managementUrl=http://macbook-pro:8082/actuator, healthUrl=http://macbook-pro:8082/actuator/health, serviceUrl=http://macbook-pro:8082/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": Connection refused; nested exception is java.net.ConnectException: Connection refused. Further attempts are logged on DEBUG level
-2023-01-13 00:45:50.839  INFO 2379 --- [RMI TCP Connection(5)-192.168.1.132] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-13 00:45:50.839  INFO 2379 --- [RMI TCP Connection(5)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-13 00:45:50.841  INFO 2379 --- [RMI TCP Connection(5)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2023-01-13 00:46:24.027  INFO 2379 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 00:46:24.030  INFO 2379 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-01-13 00:46:24.035  INFO 2379 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-01-13 00:46:30.238  INFO 2437 --- [main] c.p.s.SoftwareProjectApplication         : Starting SoftwareProjectApplication using Java 19.0.1 on MacBook-Pro with PID 2437 (/Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-/target/classes started by mbpro in /Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-)
-2023-01-13 00:46:30.242  INFO 2437 --- [main] c.p.s.SoftwareProjectApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-01-13 00:46:31.361  INFO 2437 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-13 00:46:31.417  INFO 2437 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 4 JPA repository interfaces.
-2023-01-13 00:46:31.877  INFO 2437 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-01-13 00:46:31.884  INFO 2437 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-13 00:46:31.884  INFO 2437 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-01-13 00:46:31.969  INFO 2437 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-13 00:46:31.969  INFO 2437 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1642 ms
-2023-01-13 00:46:32.330  INFO 2437 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-13 00:46:32.480  INFO 2437 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-13 00:46:32.521  INFO 2437 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-13 00:46:32.557  INFO 2437 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
-2023-01-13 00:46:32.718  INFO 2437 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-13 00:46:32.778  INFO 2437 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-01-13 00:46:33.257  INFO 2437 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-13 00:46:33.264  INFO 2437 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 00:46:33.759  WARN 2437 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-13 00:46:34.246  INFO 2437 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2023-01-13 00:46:34.321  INFO 2437 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2023-01-13 00:46:34.343  INFO 2437 --- [main] c.p.s.SoftwareProjectApplication         : Started SoftwareProjectApplication in 4.56 seconds (JVM running for 5.258)
-2023-01-13 00:46:34.401  WARN 2437 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=SPORTER, managementUrl=http://macbook-pro:8082/actuator, healthUrl=http://macbook-pro:8082/actuator/health, serviceUrl=http://macbook-pro:8082/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": Connection refused; nested exception is java.net.ConnectException: Connection refused. Further attempts are logged on DEBUG level
-2023-01-13 00:46:34.492  INFO 2437 --- [RMI TCP Connection(3)-192.168.1.132] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-13 00:46:34.493  INFO 2437 --- [RMI TCP Connection(3)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-13 00:46:34.495  INFO 2437 --- [RMI TCP Connection(3)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2023-01-13 00:49:23.936  INFO 2437 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 00:49:23.940  INFO 2437 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-01-13 00:49:23.942  INFO 2437 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-01-13 00:49:32.514  INFO 2632 --- [main] c.p.s.SoftwareProjectApplication         : Starting SoftwareProjectApplication using Java 19.0.1 on MacBook-Pro with PID 2632 (/Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-/target/classes started by mbpro in /Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-)
-2023-01-13 00:49:32.516  INFO 2632 --- [main] c.p.s.SoftwareProjectApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-01-13 00:49:33.707  INFO 2632 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-13 00:49:33.761  INFO 2632 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 4 JPA repository interfaces.
-2023-01-13 00:49:34.244  INFO 2632 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-01-13 00:49:34.250  INFO 2632 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-13 00:49:34.250  INFO 2632 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-01-13 00:49:34.334  INFO 2632 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-13 00:49:34.334  INFO 2632 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1733 ms
-2023-01-13 00:49:34.691  INFO 2632 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-13 00:49:34.836  INFO 2632 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-13 00:49:34.877  INFO 2632 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-13 00:49:34.913  INFO 2632 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
-2023-01-13 00:49:35.072  INFO 2632 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-13 00:49:35.132  INFO 2632 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-01-13 00:49:35.621  INFO 2632 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-13 00:49:35.628  INFO 2632 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 00:49:36.110  WARN 2632 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-13 00:49:36.600  INFO 2632 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2023-01-13 00:49:36.675  INFO 2632 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2023-01-13 00:49:36.699  INFO 2632 --- [main] c.p.s.SoftwareProjectApplication         : Started SoftwareProjectApplication in 4.62 seconds (JVM running for 5.308)
-2023-01-13 00:49:36.783  WARN 2632 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=SPORTER, managementUrl=http://macbook-pro:8082/actuator, healthUrl=http://macbook-pro:8082/actuator/health, serviceUrl=http://macbook-pro:8082/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": Connection refused; nested exception is java.net.ConnectException: Connection refused. Further attempts are logged on DEBUG level
-2023-01-13 00:49:36.786  INFO 2632 --- [RMI TCP Connection(1)-192.168.1.132] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-13 00:49:36.787  INFO 2632 --- [RMI TCP Connection(1)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-13 00:49:36.789  INFO 2632 --- [RMI TCP Connection(1)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2023-01-13 01:05:14.644  INFO 2632 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 01:05:14.648  INFO 2632 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-01-13 01:05:14.651  INFO 2632 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-01-13 01:05:19.400  INFO 3521 --- [main] c.p.s.SoftwareProjectApplication         : Starting SoftwareProjectApplication using Java 19.0.1 on MacBook-Pro with PID 3521 (/Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-/target/classes started by mbpro in /Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-)
-2023-01-13 01:05:19.402  INFO 3521 --- [main] c.p.s.SoftwareProjectApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-01-13 01:05:20.559  INFO 3521 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-13 01:05:20.611  INFO 3521 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 4 JPA repository interfaces.
-2023-01-13 01:05:21.080  INFO 3521 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-01-13 01:05:21.087  INFO 3521 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-13 01:05:21.087  INFO 3521 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-01-13 01:05:21.172  INFO 3521 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-13 01:05:21.173  INFO 3521 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1707 ms
-2023-01-13 01:05:21.522  INFO 3521 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-13 01:05:21.676  INFO 3521 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-13 01:05:21.717  INFO 3521 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-13 01:05:21.754  INFO 3521 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
-2023-01-13 01:05:21.920  INFO 3521 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-13 01:05:21.977  INFO 3521 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-01-13 01:05:22.463  INFO 3521 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-13 01:05:22.472  INFO 3521 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 01:05:22.951  WARN 3521 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-13 01:05:23.418  INFO 3521 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2023-01-13 01:05:23.475  INFO 3521 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2023-01-13 01:05:23.497  INFO 3521 --- [main] c.p.s.SoftwareProjectApplication         : Started SoftwareProjectApplication in 4.521 seconds (JVM running for 5.214)
-2023-01-13 01:05:23.562  WARN 3521 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=SPORTER, managementUrl=http://macbook-pro:8082/actuator, healthUrl=http://macbook-pro:8082/actuator/health, serviceUrl=http://macbook-pro:8082/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": Connection refused; nested exception is java.net.ConnectException: Connection refused. Further attempts are logged on DEBUG level
-2023-01-13 01:05:23.753  INFO 3521 --- [RMI TCP Connection(3)-192.168.1.132] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-13 01:05:23.754  INFO 3521 --- [RMI TCP Connection(3)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-13 01:05:23.757  INFO 3521 --- [RMI TCP Connection(3)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2023-01-13 01:08:42.366  INFO 3521 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 01:08:42.369  INFO 3521 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-01-13 01:08:42.373  INFO 3521 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-01-13 01:08:47.118  INFO 3710 --- [main] c.p.s.SoftwareProjectApplication         : Starting SoftwareProjectApplication using Java 19.0.1 on MacBook-Pro with PID 3710 (/Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-/target/classes started by mbpro in /Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-)
-2023-01-13 01:08:47.120  INFO 3710 --- [main] c.p.s.SoftwareProjectApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-01-13 01:08:48.278  INFO 3710 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-13 01:08:48.332  INFO 3710 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 4 JPA repository interfaces.
-2023-01-13 01:08:48.812  INFO 3710 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-01-13 01:08:48.819  INFO 3710 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-13 01:08:48.819  INFO 3710 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-01-13 01:08:48.908  INFO 3710 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-13 01:08:48.908  INFO 3710 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1723 ms
-2023-01-13 01:08:49.252  INFO 3710 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-13 01:08:49.404  INFO 3710 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-13 01:08:49.445  INFO 3710 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-13 01:08:49.482  INFO 3710 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
-2023-01-13 01:08:49.642  INFO 3710 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-13 01:08:49.701  INFO 3710 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-01-13 01:08:50.220  INFO 3710 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-13 01:08:50.228  INFO 3710 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 01:08:50.716  WARN 3710 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-13 01:08:51.232  INFO 3710 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2023-01-13 01:08:51.313  INFO 3710 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2023-01-13 01:08:51.333  INFO 3710 --- [main] c.p.s.SoftwareProjectApplication         : Started SoftwareProjectApplication in 4.654 seconds (JVM running for 5.35)
-2023-01-13 01:08:51.400  WARN 3710 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=SPORTER, managementUrl=http://macbook-pro:8082/actuator, healthUrl=http://macbook-pro:8082/actuator/health, serviceUrl=http://macbook-pro:8082/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": Connection refused; nested exception is java.net.ConnectException: Connection refused. Further attempts are logged on DEBUG level
-2023-01-13 01:08:51.485  INFO 3710 --- [RMI TCP Connection(2)-192.168.1.132] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-13 01:08:51.486  INFO 3710 --- [RMI TCP Connection(2)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-13 01:08:51.488  INFO 3710 --- [RMI TCP Connection(2)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2023-01-13 01:10:23.009  INFO 3710 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 01:10:23.012  INFO 3710 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-01-13 01:10:23.014  INFO 3710 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-01-13 01:10:27.657  INFO 3818 --- [main] c.p.s.SoftwareProjectApplication         : Starting SoftwareProjectApplication using Java 19.0.1 on MacBook-Pro with PID 3818 (/Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-/target/classes started by mbpro in /Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-)
-2023-01-13 01:10:27.660  INFO 3818 --- [main] c.p.s.SoftwareProjectApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-01-13 01:10:28.866  INFO 3818 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-13 01:10:28.921  INFO 3818 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 4 JPA repository interfaces.
-2023-01-13 01:10:29.401  INFO 3818 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-01-13 01:10:29.407  INFO 3818 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-13 01:10:29.407  INFO 3818 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-01-13 01:10:29.494  INFO 3818 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-13 01:10:29.495  INFO 3818 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1762 ms
-2023-01-13 01:10:29.839  INFO 3818 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-13 01:10:29.986  INFO 3818 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-13 01:10:30.028  INFO 3818 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-13 01:10:30.065  INFO 3818 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
-2023-01-13 01:10:30.222  INFO 3818 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-13 01:10:30.282  INFO 3818 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-01-13 01:10:30.787  INFO 3818 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-13 01:10:30.797  INFO 3818 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 01:10:31.284  WARN 3818 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-13 01:10:31.787  INFO 3818 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2023-01-13 01:10:31.867  INFO 3818 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2023-01-13 01:10:31.896  INFO 3818 --- [main] c.p.s.SoftwareProjectApplication         : Started SoftwareProjectApplication in 4.7 seconds (JVM running for 5.412)
-2023-01-13 01:10:31.981  INFO 3818 --- [RMI TCP Connection(4)-192.168.1.132] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-13 01:10:31.981  INFO 3818 --- [RMI TCP Connection(4)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-13 01:10:31.985  INFO 3818 --- [RMI TCP Connection(4)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
-2023-01-13 01:10:32.022  WARN 3818 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=SPORTER, managementUrl=http://macbook-pro:8082/actuator, healthUrl=http://macbook-pro:8082/actuator/health, serviceUrl=http://macbook-pro:8082/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": Connection refused; nested exception is java.net.ConnectException: Connection refused. Further attempts are logged on DEBUG level
-2023-01-13 01:12:23.244  INFO 3818 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 01:12:23.272  INFO 3818 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-01-13 01:12:23.301  INFO 3818 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-01-13 02:31:18.665  INFO 1129 --- [main] c.p.s.SoftwareProjectApplication         : Starting SoftwareProjectApplication using Java 19.0.1 on MacBook-Pro with PID 1129 (/Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-/target/classes started by mbpro in /Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-)
-2023-01-13 02:31:18.669  INFO 1129 --- [main] c.p.s.SoftwareProjectApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-01-13 02:31:19.805  INFO 1129 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-13 02:31:19.861  INFO 1129 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 4 JPA repository interfaces.
-2023-01-13 02:31:20.387  INFO 1129 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-01-13 02:31:20.393  INFO 1129 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-13 02:31:20.394  INFO 1129 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-01-13 02:31:20.488  INFO 1129 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-13 02:31:20.489  INFO 1129 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1746 ms
-2023-01-13 02:31:20.831  INFO 1129 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-13 02:31:20.998  INFO 1129 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-13 02:31:21.038  INFO 1129 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-13 02:31:21.101  INFO 1129 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
-2023-01-13 02:31:21.274  INFO 1129 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-13 02:31:21.338  INFO 1129 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-01-13 02:31:21.867  INFO 1129 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-13 02:31:21.874  INFO 1129 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 02:31:22.355  WARN 1129 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-13 02:31:22.842  INFO 1129 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2023-01-13 02:31:22.893  INFO 1129 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2023-01-13 02:31:22.917  INFO 1129 --- [main] c.p.s.SoftwareProjectApplication         : Started SoftwareProjectApplication in 4.761 seconds (JVM running for 5.553)
-2023-01-13 02:31:23.006  WARN 1129 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=SPORTER, managementUrl=http://macbook-pro:8082/actuator, healthUrl=http://macbook-pro:8082/actuator/health, serviceUrl=http://macbook-pro:8082/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": Connection refused; nested exception is java.net.ConnectException: Connection refused. Further attempts are logged on DEBUG level
-2023-01-13 02:31:23.433  INFO 1129 --- [RMI TCP Connection(2)-192.168.1.132] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-13 02:31:23.434  INFO 1129 --- [RMI TCP Connection(2)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-13 02:31:23.436  INFO 1129 --- [RMI TCP Connection(2)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2023-01-13 02:38:10.342  WARN 1129 --- [http-nio-8082-exec-4] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "yasser122@gmail.com"]
-2023-01-13 02:39:45.210  INFO 1129 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 02:39:45.213  INFO 1129 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-01-13 02:39:45.216  INFO 1129 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-01-13 02:39:50.642  INFO 2934 --- [main] c.p.s.SoftwareProjectApplication         : Starting SoftwareProjectApplication using Java 19.0.1 on MacBook-Pro with PID 2934 (/Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-/target/classes started by mbpro in /Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-)
-2023-01-13 02:39:50.644  INFO 2934 --- [main] c.p.s.SoftwareProjectApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-01-13 02:39:51.828  INFO 2934 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-13 02:39:51.895  INFO 2934 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 4 JPA repository interfaces.
-2023-01-13 02:39:52.353  INFO 2934 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-01-13 02:39:52.359  INFO 2934 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-13 02:39:52.360  INFO 2934 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-01-13 02:39:52.445  INFO 2934 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-13 02:39:52.445  INFO 2934 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1723 ms
-2023-01-13 02:39:52.772  INFO 2934 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-13 02:39:52.915  INFO 2934 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-13 02:39:52.951  INFO 2934 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-13 02:39:52.984  INFO 2934 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
-2023-01-13 02:39:53.143  INFO 2934 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-13 02:39:53.204  INFO 2934 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-01-13 02:39:53.690  INFO 2934 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-13 02:39:53.699  INFO 2934 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 02:39:54.154  WARN 2934 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-13 02:39:54.622  INFO 2934 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2023-01-13 02:39:54.696  INFO 2934 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2023-01-13 02:39:54.716  INFO 2934 --- [main] c.p.s.SoftwareProjectApplication         : Started SoftwareProjectApplication in 4.513 seconds (JVM running for 5.246)
-2023-01-13 02:39:54.778  WARN 2934 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=SPORTER, managementUrl=http://macbook-pro:8082/actuator, healthUrl=http://macbook-pro:8082/actuator/health, serviceUrl=http://macbook-pro:8082/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": Connection refused; nested exception is java.net.ConnectException: Connection refused. Further attempts are logged on DEBUG level
-2023-01-13 02:39:54.995  INFO 2934 --- [RMI TCP Connection(2)-192.168.1.132] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-13 02:39:54.996  INFO 2934 --- [RMI TCP Connection(2)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-13 02:39:54.998  INFO 2934 --- [RMI TCP Connection(2)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2023-01-13 03:21:02.305  INFO 2934 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 03:21:02.335  INFO 2934 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-01-13 03:21:02.367  INFO 2934 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-01-13 03:23:56.270  INFO 1195 --- [main] c.p.s.SoftwareProjectApplication         : Starting SoftwareProjectApplication using Java 19.0.1 on MacBook-Pro with PID 1195 (/Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-/target/classes started by mbpro in /Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-)
-2023-01-13 03:23:56.274  INFO 1195 --- [main] c.p.s.SoftwareProjectApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-01-13 03:23:57.426  INFO 1195 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-13 03:23:57.479  INFO 1195 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47 ms. Found 4 JPA repository interfaces.
-2023-01-13 03:23:57.946  INFO 1195 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-01-13 03:23:57.952  INFO 1195 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-13 03:23:57.952  INFO 1195 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-01-13 03:23:58.039  INFO 1195 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-13 03:23:58.040  INFO 1195 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1686 ms
-2023-01-13 03:23:58.380  INFO 1195 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-13 03:23:58.530  INFO 1195 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-13 03:23:58.571  INFO 1195 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-13 03:23:58.614  INFO 1195 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
-2023-01-13 03:23:58.785  INFO 1195 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-13 03:23:58.851  INFO 1195 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-01-13 03:23:59.371  INFO 1195 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-13 03:23:59.380  INFO 1195 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 03:23:59.874  WARN 1195 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-13 03:24:00.348  INFO 1195 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2023-01-13 03:24:00.416  INFO 1195 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2023-01-13 03:24:00.439  INFO 1195 --- [main] c.p.s.SoftwareProjectApplication         : Started SoftwareProjectApplication in 4.627 seconds (JVM running for 5.43)
-2023-01-13 03:24:00.517  WARN 1195 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=SPORTER, managementUrl=http://macbook-pro:8082/actuator, healthUrl=http://macbook-pro:8082/actuator/health, serviceUrl=http://macbook-pro:8082/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": Connection refused; nested exception is java.net.ConnectException: Connection refused. Further attempts are logged on DEBUG level
-2023-01-13 03:24:00.531  INFO 1195 --- [RMI TCP Connection(2)-192.168.1.132] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-13 03:24:00.531  INFO 1195 --- [RMI TCP Connection(2)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-13 03:24:00.534  INFO 1195 --- [RMI TCP Connection(2)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2023-01-13 03:25:26.859  INFO 1195 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 03:25:26.863  INFO 1195 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-01-13 03:25:26.867  INFO 1195 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-01-13 03:25:32.261  INFO 1303 --- [main] c.p.s.SoftwareProjectApplication         : Starting SoftwareProjectApplication using Java 19.0.1 on MacBook-Pro with PID 1303 (/Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-/target/classes started by mbpro in /Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-)
-2023-01-13 03:25:32.263  INFO 1303 --- [main] c.p.s.SoftwareProjectApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-01-13 03:25:33.379  INFO 1303 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-13 03:25:33.436  INFO 1303 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 4 JPA repository interfaces.
-2023-01-13 03:25:33.898  INFO 1303 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-01-13 03:25:33.904  INFO 1303 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-13 03:25:33.904  INFO 1303 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-01-13 03:25:33.985  INFO 1303 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-13 03:25:33.986  INFO 1303 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1656 ms
-2023-01-13 03:25:34.322  INFO 1303 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-13 03:25:34.467  INFO 1303 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-13 03:25:34.505  INFO 1303 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-13 03:25:34.544  INFO 1303 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
-2023-01-13 03:25:34.703  INFO 1303 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-13 03:25:34.760  INFO 1303 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-01-13 03:25:35.248  INFO 1303 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-13 03:25:35.257  INFO 1303 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 03:25:35.717  WARN 1303 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-13 03:25:36.190  INFO 1303 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2023-01-13 03:25:36.262  INFO 1303 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2023-01-13 03:25:36.283  INFO 1303 --- [main] c.p.s.SoftwareProjectApplication         : Started SoftwareProjectApplication in 4.463 seconds (JVM running for 5.173)
-2023-01-13 03:25:36.344  WARN 1303 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=SPORTER, managementUrl=http://macbook-pro:8082/actuator, healthUrl=http://macbook-pro:8082/actuator/health, serviceUrl=http://macbook-pro:8082/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": Connection refused; nested exception is java.net.ConnectException: Connection refused. Further attempts are logged on DEBUG level
-2023-01-13 03:25:36.655  INFO 1303 --- [RMI TCP Connection(1)-192.168.1.132] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-13 03:25:36.655  INFO 1303 --- [RMI TCP Connection(1)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-13 03:25:36.657  INFO 1303 --- [RMI TCP Connection(1)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2023-01-13 03:31:55.750  INFO 1303 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 03:31:55.754  INFO 1303 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-01-13 03:31:55.757  INFO 1303 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-01-13 03:32:01.303  INFO 1701 --- [main] c.p.s.SoftwareProjectApplication         : Starting SoftwareProjectApplication using Java 19.0.1 on MacBook-Pro with PID 1701 (/Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-/target/classes started by mbpro in /Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-)
-2023-01-13 03:32:01.305  INFO 1701 --- [main] c.p.s.SoftwareProjectApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-01-13 03:32:02.457  INFO 1701 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-13 03:32:02.515  INFO 1701 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51 ms. Found 4 JPA repository interfaces.
-2023-01-13 03:32:02.970  INFO 1701 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-01-13 03:32:02.976  INFO 1701 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-13 03:32:02.976  INFO 1701 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-01-13 03:32:03.060  INFO 1701 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-13 03:32:03.060  INFO 1701 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1686 ms
-2023-01-13 03:32:03.396  INFO 1701 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-13 03:32:03.550  INFO 1701 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-13 03:32:03.588  INFO 1701 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-13 03:32:03.624  INFO 1701 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
-2023-01-13 03:32:03.780  INFO 1701 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-13 03:32:03.841  INFO 1701 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-01-13 03:32:04.319  INFO 1701 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-13 03:32:04.325  INFO 1701 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 03:32:04.811  WARN 1701 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-13 03:32:05.285  INFO 1701 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2023-01-13 03:32:05.343  INFO 1701 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2023-01-13 03:32:05.362  INFO 1701 --- [main] c.p.s.SoftwareProjectApplication         : Started SoftwareProjectApplication in 4.516 seconds (JVM running for 5.233)
-2023-01-13 03:32:05.429  WARN 1701 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=SPORTER, managementUrl=http://macbook-pro:8082/actuator, healthUrl=http://macbook-pro:8082/actuator/health, serviceUrl=http://macbook-pro:8082/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": Connection refused; nested exception is java.net.ConnectException: Connection refused. Further attempts are logged on DEBUG level
-2023-01-13 03:32:05.619  INFO 1701 --- [RMI TCP Connection(2)-192.168.1.132] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-13 03:32:05.619  INFO 1701 --- [RMI TCP Connection(2)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-13 03:32:05.622  INFO 1701 --- [RMI TCP Connection(2)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2023-01-13 03:32:32.776  INFO 1701 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 03:32:32.778  INFO 1701 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-01-13 03:32:32.780  INFO 1701 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-01-13 03:32:38.032  INFO 1737 --- [main] c.p.s.SoftwareProjectApplication         : Starting SoftwareProjectApplication using Java 19.0.1 on MacBook-Pro with PID 1737 (/Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-/target/classes started by mbpro in /Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-)
-2023-01-13 03:32:38.034  INFO 1737 --- [main] c.p.s.SoftwareProjectApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-01-13 03:32:39.165  INFO 1737 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-13 03:32:39.219  INFO 1737 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 4 JPA repository interfaces.
-2023-01-13 03:32:39.679  INFO 1737 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-01-13 03:32:39.685  INFO 1737 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-13 03:32:39.686  INFO 1737 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-01-13 03:32:39.771  INFO 1737 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-13 03:32:39.772  INFO 1737 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1670 ms
-2023-01-13 03:32:40.101  INFO 1737 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-13 03:32:40.245  INFO 1737 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-13 03:32:40.287  INFO 1737 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-13 03:32:40.321  INFO 1737 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
-2023-01-13 03:32:40.475  INFO 1737 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-13 03:32:40.537  INFO 1737 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-01-13 03:32:41.027  INFO 1737 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-13 03:32:41.033  INFO 1737 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 03:32:41.500  WARN 1737 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-13 03:32:41.973  INFO 1737 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2023-01-13 03:32:42.053  INFO 1737 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2023-01-13 03:32:42.071  INFO 1737 --- [main] c.p.s.SoftwareProjectApplication         : Started SoftwareProjectApplication in 4.463 seconds (JVM running for 5.166)
-2023-01-13 03:32:42.135  WARN 1737 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=SPORTER, managementUrl=http://macbook-pro:8082/actuator, healthUrl=http://macbook-pro:8082/actuator/health, serviceUrl=http://macbook-pro:8082/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": Connection refused; nested exception is java.net.ConnectException: Connection refused. Further attempts are logged on DEBUG level
-2023-01-13 03:32:42.414  INFO 1737 --- [RMI TCP Connection(1)-192.168.1.132] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-13 03:32:42.415  INFO 1737 --- [RMI TCP Connection(1)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-13 03:32:42.417  INFO 1737 --- [RMI TCP Connection(1)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2023-01-13 03:43:07.083  INFO 1737 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 03:43:07.086  INFO 1737 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-01-13 03:43:07.088  INFO 1737 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-01-13 03:43:12.448  INFO 2319 --- [main] c.p.s.SoftwareProjectApplication         : Starting SoftwareProjectApplication using Java 19.0.1 on MacBook-Pro with PID 2319 (/Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-/target/classes started by mbpro in /Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-)
-2023-01-13 03:43:12.451  INFO 2319 --- [main] c.p.s.SoftwareProjectApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-01-13 03:43:13.612  INFO 2319 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-13 03:43:13.676  INFO 2319 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 59 ms. Found 4 JPA repository interfaces.
-2023-01-13 03:43:14.134  INFO 2319 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-01-13 03:43:14.140  INFO 2319 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-13 03:43:14.140  INFO 2319 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-01-13 03:43:14.225  INFO 2319 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-13 03:43:14.226  INFO 2319 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1710 ms
-2023-01-13 03:43:14.572  INFO 2319 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-13 03:43:14.718  INFO 2319 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-13 03:43:14.753  INFO 2319 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-13 03:43:14.790  INFO 2319 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
-2023-01-13 03:43:14.952  INFO 2319 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-13 03:43:15.009  INFO 2319 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-01-13 03:43:15.514  INFO 2319 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-13 03:43:15.522  INFO 2319 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 03:43:16.000  WARN 2319 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-13 03:43:16.499  INFO 2319 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2023-01-13 03:43:16.578  INFO 2319 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2023-01-13 03:43:16.601  INFO 2319 --- [main] c.p.s.SoftwareProjectApplication         : Started SoftwareProjectApplication in 4.593 seconds (JVM running for 5.28)
-2023-01-13 03:43:16.660  WARN 2319 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=SPORTER, managementUrl=http://macbook-pro:8082/actuator, healthUrl=http://macbook-pro:8082/actuator/health, serviceUrl=http://macbook-pro:8082/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": Connection refused; nested exception is java.net.ConnectException: Connection refused. Further attempts are logged on DEBUG level
-2023-01-13 03:43:16.793  INFO 2319 --- [RMI TCP Connection(2)-192.168.1.132] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-13 03:43:16.793  INFO 2319 --- [RMI TCP Connection(2)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-13 03:43:16.796  INFO 2319 --- [RMI TCP Connection(2)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2023-01-13 03:58:37.167  INFO 2319 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 03:58:37.170  INFO 2319 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2023-01-13 03:58:37.172  INFO 2319 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2023-01-13 04:01:12.435  INFO 3356 --- [main] c.p.s.SoftwareProjectApplication         : Starting SoftwareProjectApplication using Java 19.0.1 on MacBook-Pro with PID 3356 (/Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-/target/classes started by mbpro in /Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-)
-2023-01-13 04:01:12.437  INFO 3356 --- [main] c.p.s.SoftwareProjectApplication         : No active profile set, falling back to 1 default profile: "default"
-2023-01-13 04:01:13.543  INFO 3356 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2023-01-13 04:01:13.598  INFO 3356 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 50 ms. Found 4 JPA repository interfaces.
-2023-01-13 04:01:14.068  INFO 3356 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2023-01-13 04:01:14.075  INFO 3356 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2023-01-13 04:01:14.075  INFO 3356 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
-2023-01-13 04:01:14.166  INFO 3356 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2023-01-13 04:01:14.167  INFO 3356 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1665 ms
-2023-01-13 04:01:14.510  INFO 3356 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2023-01-13 04:01:14.657  INFO 3356 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2023-01-13 04:01:14.693  INFO 3356 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2023-01-13 04:01:14.730  INFO 3356 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
-2023-01-13 04:01:14.888  INFO 3356 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2023-01-13 04:01:14.947  INFO 3356 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
-2023-01-13 04:01:15.440  INFO 3356 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2023-01-13 04:01:15.449  INFO 3356 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2023-01-13 04:01:15.924  WARN 3356 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2023-01-13 04:01:16.415  INFO 3356 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
-2023-01-13 04:01:16.489  INFO 3356 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2023-01-13 04:01:16.509  INFO 3356 --- [main] c.p.s.SoftwareProjectApplication         : Started SoftwareProjectApplication in 4.534 seconds (JVM running for 5.24)
-2023-01-13 04:01:16.572  WARN 3356 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=SPORTER, managementUrl=http://macbook-pro:8082/actuator, healthUrl=http://macbook-pro:8082/actuator/health, serviceUrl=http://macbook-pro:8082/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": Connection refused; nested exception is java.net.ConnectException: Connection refused. Further attempts are logged on DEBUG level
-2023-01-13 04:01:16.734  INFO 3356 --- [RMI TCP Connection(1)-192.168.1.132] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2023-01-13 04:01:16.735  INFO 3356 --- [RMI TCP Connection(1)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2023-01-13 04:01:16.737  INFO 3356 --- [RMI TCP Connection(1)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-01-14 03:48:16.283  INFO 3013 --- [main] c.p.s.SoftwareProjectApplication         : Starting SoftwareProjectApplication using Java 19.0.1 on MacBook-Pro with PID 3013 (/Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-/target/classes started by mbpro in /Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-)
+2023-01-14 03:48:16.292  INFO 3013 --- [main] c.p.s.SoftwareProjectApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-01-14 03:48:17.454  INFO 3013 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-14 03:48:17.509  INFO 3013 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 48 ms. Found 4 JPA repository interfaces.
+2023-01-14 03:48:17.984  INFO 3013 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2023-01-14 03:48:17.990  INFO 3013 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-14 03:48:17.991  INFO 3013 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-14 03:48:18.080  INFO 3013 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-14 03:48:18.082  INFO 3013 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1698 ms
+2023-01-14 03:48:18.418  INFO 3013 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-14 03:48:18.579  INFO 3013 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-14 03:48:18.620  INFO 3013 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-14 03:48:18.669  INFO 3013 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2023-01-14 03:48:18.837  INFO 3013 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-14 03:48:18.902  INFO 3013 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2023-01-14 03:48:19.413  INFO 3013 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-14 03:48:19.420  INFO 3013 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-14 03:48:19.926  WARN 3013 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-14 03:48:20.428  INFO 3013 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2023-01-14 03:48:20.493  INFO 3013 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2023-01-14 03:48:20.514  INFO 3013 --- [main] c.p.s.SoftwareProjectApplication         : Started SoftwareProjectApplication in 4.683 seconds (JVM running for 5.467)
+2023-01-14 03:48:20.594  WARN 3013 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=SPORTER, managementUrl=http://macbook-pro:8082/actuator, healthUrl=http://macbook-pro:8082/actuator/health, serviceUrl=http://macbook-pro:8082/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": Connection refused; nested exception is java.net.ConnectException: Connection refused. Further attempts are logged on DEBUG level
+2023-01-14 03:48:21.071  INFO 3013 --- [RMI TCP Connection(2)-192.168.1.132] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-14 03:48:21.071  INFO 3013 --- [RMI TCP Connection(2)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-14 03:48:21.074  INFO 3013 --- [RMI TCP Connection(2)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-01-14 03:52:43.995  INFO 3013 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-14 03:52:43.999  INFO 3013 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-14 03:52:44.007  INFO 3013 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-01-14 03:52:49.330  INFO 3486 --- [main] c.p.s.SoftwareProjectApplication         : Starting SoftwareProjectApplication using Java 19.0.1 on MacBook-Pro with PID 3486 (/Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-/target/classes started by mbpro in /Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-)
+2023-01-14 03:52:49.332  INFO 3486 --- [main] c.p.s.SoftwareProjectApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-01-14 03:52:50.452  INFO 3486 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-14 03:52:50.511  INFO 3486 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 54 ms. Found 4 JPA repository interfaces.
+2023-01-14 03:52:50.967  INFO 3486 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2023-01-14 03:52:50.973  INFO 3486 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-14 03:52:50.973  INFO 3486 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-14 03:52:51.056  INFO 3486 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-14 03:52:51.056  INFO 3486 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1659 ms
+2023-01-14 03:52:51.397  INFO 3486 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-14 03:52:51.540  INFO 3486 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-14 03:52:51.576  INFO 3486 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-14 03:52:51.611  INFO 3486 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2023-01-14 03:52:51.771  INFO 3486 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-14 03:52:51.832  INFO 3486 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2023-01-14 03:52:52.315  INFO 3486 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-14 03:52:52.321  INFO 3486 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-14 03:52:52.796  WARN 3486 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-14 03:52:53.291  INFO 3486 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2023-01-14 03:52:53.342  INFO 3486 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2023-01-14 03:52:53.361  INFO 3486 --- [main] c.p.s.SoftwareProjectApplication         : Started SoftwareProjectApplication in 4.446 seconds (JVM running for 5.188)
+2023-01-14 03:52:53.416  WARN 3486 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=SPORTER, managementUrl=http://macbook-pro:8082/actuator, healthUrl=http://macbook-pro:8082/actuator/health, serviceUrl=http://macbook-pro:8082/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": Connection refused; nested exception is java.net.ConnectException: Connection refused. Further attempts are logged on DEBUG level
+2023-01-14 03:52:53.757  INFO 3486 --- [RMI TCP Connection(2)-192.168.1.132] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-14 03:52:53.757  INFO 3486 --- [RMI TCP Connection(2)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-14 03:52:53.760  INFO 3486 --- [RMI TCP Connection(2)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-01-14 03:56:05.881  INFO 3486 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-14 03:56:05.884  INFO 3486 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-14 03:56:05.890  INFO 3486 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-01-14 03:56:11.567  INFO 3850 --- [main] c.p.s.SoftwareProjectApplication         : Starting SoftwareProjectApplication using Java 19.0.1 on MacBook-Pro with PID 3850 (/Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-/target/classes started by mbpro in /Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-)
+2023-01-14 03:56:11.569  INFO 3850 --- [main] c.p.s.SoftwareProjectApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-01-14 03:56:12.745  INFO 3850 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-14 03:56:12.812  INFO 3850 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 4 JPA repository interfaces.
+2023-01-14 03:56:13.379  INFO 3850 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2023-01-14 03:56:13.386  INFO 3850 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-14 03:56:13.386  INFO 3850 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-14 03:56:13.476  INFO 3850 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-14 03:56:13.476  INFO 3850 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1837 ms
+2023-01-14 03:56:13.759  INFO 3850 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-14 03:56:13.927  INFO 3850 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-14 03:56:13.991  INFO 3850 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-14 03:56:14.080  INFO 3850 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2023-01-14 03:56:14.197  INFO 3850 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-14 03:56:14.262  INFO 3850 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2023-01-14 03:56:14.840  INFO 3850 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-14 03:56:14.849  INFO 3850 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-14 03:56:15.447  WARN 3850 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-14 03:56:15.991  INFO 3850 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2023-01-14 03:56:16.060  INFO 3850 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2023-01-14 03:56:16.084  INFO 3850 --- [main] c.p.s.SoftwareProjectApplication         : Started SoftwareProjectApplication in 5.009 seconds (JVM running for 5.947)
+2023-01-14 03:56:16.150  WARN 3850 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=SPORTER, managementUrl=http://macbook-pro:8082/actuator, healthUrl=http://macbook-pro:8082/actuator/health, serviceUrl=http://macbook-pro:8082/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": Connection refused; nested exception is java.net.ConnectException: Connection refused. Further attempts are logged on DEBUG level
+2023-01-14 03:56:16.426  INFO 3850 --- [RMI TCP Connection(2)-192.168.1.132] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-14 03:56:16.427  INFO 3850 --- [RMI TCP Connection(2)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-14 03:56:16.429  INFO 3850 --- [RMI TCP Connection(2)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-01-14 04:00:39.522  WARN 3850 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=3m25s451ms).
+2023-01-14 04:00:39.574  INFO 3850 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-01-14 04:00:39.576  INFO 3850 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-01-14 04:00:39.580  INFO 3850 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-01-14 04:00:42.286  INFO 4307 --- [main] c.p.s.SoftwareProjectApplication         : Starting SoftwareProjectApplication using Java 19.0.1 on MacBook-Pro with PID 4307 (/Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-/target/classes started by mbpro in /Users/mbpro/Documents/MyFiles/University/Graduation Project/SPORTER-main/SPORTER-Official-)
+2023-01-14 04:00:42.293  INFO 4307 --- [main] c.p.s.SoftwareProjectApplication         : No active profile set, falling back to 1 default profile: "default"
+2023-01-14 04:00:43.443  INFO 4307 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-01-14 04:00:43.497  INFO 4307 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 4 JPA repository interfaces.
+2023-01-14 04:00:43.961  INFO 4307 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2023-01-14 04:00:43.967  INFO 4307 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-01-14 04:00:43.967  INFO 4307 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.65]
+2023-01-14 04:00:44.048  INFO 4307 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-01-14 04:00:44.048  INFO 4307 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1693 ms
+2023-01-14 04:00:44.386  INFO 4307 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-01-14 04:00:44.538  INFO 4307 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-01-14 04:00:44.577  INFO 4307 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-01-14 04:00:44.612  INFO 4307 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.11.Final
+2023-01-14 04:00:44.773  INFO 4307 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-01-14 04:00:44.831  INFO 4307 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+2023-01-14 04:00:45.322  INFO 4307 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-01-14 04:00:45.328  INFO 4307 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-01-14 04:00:45.813  WARN 4307 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-01-14 04:00:46.317  INFO 4307 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 14 endpoint(s) beneath base path '/actuator'
+2023-01-14 04:00:46.368  INFO 4307 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2023-01-14 04:00:46.390  INFO 4307 --- [main] c.p.s.SoftwareProjectApplication         : Started SoftwareProjectApplication in 4.579 seconds (JVM running for 5.294)
+2023-01-14 04:00:46.445  WARN 4307 --- [registrationTask1] d.c.b.a.c.r.ApplicationRegistrator       : Failed to register application as Application(name=SPORTER, managementUrl=http://macbook-pro:8082/actuator, healthUrl=http://macbook-pro:8082/actuator/health, serviceUrl=http://macbook-pro:8082/) at spring-boot-admin ([http://localhost:8080/instances]): I/O error on POST request for "http://localhost:8080/instances": Connection refused; nested exception is java.net.ConnectException: Connection refused. Further attempts are logged on DEBUG level
+2023-01-14 04:00:46.497  INFO 4307 --- [RMI TCP Connection(3)-192.168.1.132] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-01-14 04:00:46.498  INFO 4307 --- [RMI TCP Connection(3)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-01-14 04:00:46.501  INFO 4307 --- [RMI TCP Connection(3)-192.168.1.132] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2023-01-14 04:02:35.999  WARN 4307 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m21s346ms).
+2023-01-14 04:09:45.200  WARN 4307 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=7m9s203ms).

@@ -26,6 +26,11 @@ public class EditProfileController {
     {
         return this.PlayerDao.EditInfo(Body);
     }
+    @PatchMapping(path = "/edit/coach")
+    public String editCoachInfo(@RequestBody EditProfileBody Body)
+    {
+        return this.CoachDao.editInfo(Body);
+    }
     @GetMapping(path = "/help")
     public String SendFeedBack(@RequestParam String email,
                                @RequestParam String name,

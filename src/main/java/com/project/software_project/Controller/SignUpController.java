@@ -3,7 +3,6 @@ package com.project.software_project.Controller;
 import com.project.software_project.Dao.CoachesDao;
 import com.project.software_project.Dao.PlayersDao;
 import com.project.software_project.bodies.PhoneDigitsAPIBody;
-import com.project.software_project.bodies.PlayerLogInBody;
 import com.project.software_project.bodies.StringBody;
 import com.project.software_project.Entity.CoachesEntity;
 import com.project.software_project.Entity.PlayersEntity;
@@ -66,6 +65,6 @@ public class SignUpController {
     @PostMapping (path = "/getphonedigitspalyer")
     public PhoneDigitsAPIBody GetPhoneDigitsP(@RequestBody StringBody email)
     {
-        return this.PlayerDao.phonedigitsplayer(email.bodystring);
+        return this.PlayerDao.phoneDigitsPlayer(email.bodystring);
     }
 }

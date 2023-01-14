@@ -2,8 +2,10 @@ package com.project.software_project.Dao;
 
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import com.project.software_project.Dto.GymsDto;
+import com.project.software_project.Entity.CoachesEntity;
 import com.project.software_project.Entity.GymsEntity;
 import com.project.software_project.Entity.PlayersEntity;
+import com.project.software_project.Reposorty.CoachesRepo;
 import com.project.software_project.Reposorty.GymsRepo;
 import com.project.software_project.Reposorty.PlayersRepo;
 import org.jetbrains.annotations.NotNull;
@@ -22,6 +24,8 @@ public class GymsDao {
     private GymsRepo GymRepo;
     @Autowired
     private PlayersRepo playersRepo;
+    @Autowired
+    private CoachesRepo coachesRepo;
 
 
 
@@ -83,6 +87,21 @@ public class GymsDao {
         catch (Exception e)
         {
             return "Failed";
+        }
+    }
+
+    public List<CoachesEntity> getGymCoaches(Integer gymId) {
+        try {
+            Optional <GymsEntity> gym = Optional.ofNullable(this.GymRepo.findAllById(gymId));
+            if(gym.isPresent())
+            {
+                return this.coachesRepo.findAllByGymId(gymId);
+            }
+            else {return new ArrayList<>();}
+        }
+        catch (Exception e)
+        {
+            return new ArrayList<>();
         }
     }
 }

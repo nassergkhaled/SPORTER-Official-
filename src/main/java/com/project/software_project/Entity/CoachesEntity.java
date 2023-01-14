@@ -1,6 +1,7 @@
 package com.project.software_project.Entity;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
         import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 import com.project.software_project.Dto.CoachesDto;
@@ -38,6 +39,8 @@ public class CoachesEntity
     public int goal ;//0--> Learn The Basics// 1-->Get Fitter// 2--> Lose Weight// 3--> Gain Weight//4-->Gain More Flexible
     public int registrationyear;
     public String path;
+    @Column(name = "gymid")
+    public int gymId;
 
     public int getExperience(){
         return LocalDate.now().getYear()-registrationyear;
@@ -46,6 +49,13 @@ public class CoachesEntity
 
     @OneToMany(mappedBy = "Coach")//Note Very Important if you made many relations for the same entity you have to choose the same mapped by name
     private List<PlayersEntity> playersOfCoach;
+
+    @JsonBackReference
+    @JoinColumn(name="gymid",insertable = false,updatable = false)
+    @ManyToOne
+    private GymsEntity gymentity;
+
+
 
 //    public static CoachesEntity toDto(CoachesDto Coach) {
 //        return CoachesEntity.builder()

@@ -2,6 +2,7 @@
 package com.project.software_project.Controller;
 import com.project.software_project.Dao.GymsDao;
 import com.project.software_project.Dto.GymsDto;
+import com.project.software_project.Entity.CoachesEntity;
 import com.project.software_project.Entity.GymsEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -34,5 +35,10 @@ public class GymsController {
     public String addGym(@RequestBody GymsEntity Gym)
     {
         return this.gymsDao.addGym(Gym);
+    }
+    @GetMapping(path = "/coaches/{id}")
+    public List<CoachesEntity> gymCoaches(@PathVariable (name = "id") Integer id)
+    {
+        return this.gymsDao.getGymCoaches(id);
     }
 }

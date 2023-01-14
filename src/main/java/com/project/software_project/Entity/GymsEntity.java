@@ -40,6 +40,10 @@ public class GymsEntity
     @OneToMany(mappedBy = "gymentity")
     private List<PlayersEntity> gymPlayers;
 
+    @JsonManagedReference
+    @OneToMany(mappedBy = "gymentity")
+    private List<CoachesEntity> gymCoaches;
+
 
     public static GymsEntity toEntity (GymsDto Gym)
     {

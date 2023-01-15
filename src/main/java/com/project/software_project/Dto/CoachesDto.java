@@ -57,6 +57,7 @@ public class CoachesDto {
 
     public static CoachesDto toDtoWithoutPrivateData(CoachesEntity Coach) {
         return CoachesDto.builder()
+                .id(Coach.getId())
                 .phone(Coach.getPhone())
                 .email(Coach.getEmail())
                 .fullname(Coach.getFullname())
@@ -75,6 +76,7 @@ public class CoachesDto {
     public static CoachesDto toDtoWithoutPrivateDataNorPlayers(CoachesEntity Coach)
     {
         return CoachesDto.builder()
+                .id(Coach.getId())
                 .phone(Coach.getPhone())
                 .email(Coach.getEmail())
                 .fullname(Coach.getFullname())

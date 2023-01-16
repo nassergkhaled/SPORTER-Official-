@@ -1,0 +1,42 @@
+"id","name","location","rating","description","amountannual","amountmonthly","amountquarterly"
+101,NablusGym,Nablus,5,very powerful gym interested in fitness field ,1000,200,450
+107,FitLife Gym,Amman,4,modern and spacious gym with a wide variety of equipment and classes,1500,300,700
+108,BodyWorks Gym,Jerash,3,smaller gym with a friendly atmosphere and personal training options,800,160,360
+109,PowerHouse Gym,Aqaba,5,luxurious and state-of-the-art gym with a sauna and pool,2000,400,900
+110,Endurance Gym,Irbid,4,medium-sized gym with a focus on functional training and group classes,1200,240,540
+111,Total Fitness Gym,Ramallah,3,budget-friendly gym with basic equipment and a simple layout,600,120,270
+112,MuscleTech Gym,Nablus,4,large gym with a wide variety of equipment and specialized training programs,1500,300,700
+113,FitZone Gym,Jericho,3,smaller gym with a friendly atmosphere and a focus on yoga and Pilates,800,160,360
+114,EliteFit Gym,Tubas,5,luxurious and state-of-the-art gym with a pool and spa,2000,400,900
+115,StrengthWorks Gym,Bethlehem,4,medium-sized gym with a focus on weight training and group classes,1200,240,540
+116,FitLife Gym,Hebron,3,budget-friendly gym with basic equipment and a simple layout,600,120,270
+117,PowerUp Gym,Jericho,4,large gym with a wide variety of equipment and specialized training programs,1500,300,700
+118,FitLife,Bethlehem,3,smaller gym with a friendly atmosphere and a focus on yoga and Pilates,800,160,360
+119,EliteFit,Irbid,5,luxurious and state-of-the-art gym with a pool and spa,2000,400,900
+120,StrengthWorks,Tubas,4,medium-sized gym with a focus on weight training and group classes,1200,240,540
+121,FitZone,Jerash,3,budget-friendly gym with basic equipment and a simple layout,600,120,270
+122,PowerGym,Amman,4,large gym with a wide variety of equipment and specialized training programs,1500,300,700
+123,FitnessFirst,Nablus,3,smaller gym with a friendly atmosphere and a focus on cardio and group classes,800,160,360
+124,MuscleMania,Jerusalem,5,luxurious and state-of-the-art gym with a sauna and pool,2000,400,900
+125,FitZone,Hebron,4,medium-sized gym with a focus on functional training and personal training options,1200,240,540
+126,BodyWorks,Ramallah,3,budget-friendly gym with basic equipment and a variety of group classes,600,120,270
+127,PowerUp Gym,Jericho,4,large gym with a wide variety of equipment and specialized training programs,1500,300,700
+128,FitLife,Bethlehem,3,smaller gym with a friendly atmosphere and a focus on yoga and Pilates,800,160,360
+129,EliteFit,Irbid,5,luxurious and state-of-the-art gym with a pool and spa,2000,400,900
+135,FitZone,Hebron,4,medium-sized gym with a focus on functional training and personal training options,1200,240,540
+136,BodyWorks,Ramallah,3,budget-friendly gym with basic equipment and a variety of group classes,600,120,270
+137,PowerUp Gym,Jericho,4,large gym with a wide variety of equipment and specialized training programs,1500,300,700
+138,FitLife,Bethlehem,3,smaller gym with a friendly atmosphere and a focus on yoga and Pilates,800,160,360
+139,EliteFit,Irbid,5,luxurious and state-of-the-art gym with a pool and spa,2000,400,900
+140,StrengthWorks,Tubas,4,medium-sized gym with a focus on weight training and group classes,1200,240,540
+141,FitZone,Jerash,3,budget-friendly gym with basic equipment and a simple layout,600,120,270
+142,PowerGym,Amman,4,large gym with a wide variety of equipment and specialized training programs,1500,300,700
+143,FitnessFirst,Nablus,3,smaller gym with a friendly atmosphere and a focus on cardio and group classes,800,160,360
+144,MuscleMania,Jerusalem,5,luxurious and state-of-the-art gym with a sauna and pool,2000,400,900
+190,FitZone,Hebron,4,medium-sized gym with a focus on functional training and personal training options,1200,240,540
+191,BodyWorks,Ramallah,3,budget-friendly gym with basic equipment and a variety of group classes,600,120,270
+192,PowerUp Gym,Jericho,4,large gym with a wide variety of equipment and specialized training programs,1500,300,700
+148,FitLife,Bethlehem,3,smaller gym with a friendly atmosphere and a focus on yoga and Pilates,800,160,360
+149,EliteFit,Irbid,5,luxurious and state-of-the-art gym with a pool and spa,2000,400,900
+150,StrengthWorks,Tubas,4,medium-sized gym with a focus on weight training and group classes,1200,240,540
+151,FitZone,Jerash,3,budget-friendly gym with basic equipment and a simple layout,600,120,270

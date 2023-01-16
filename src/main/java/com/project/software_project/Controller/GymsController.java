@@ -22,9 +22,8 @@ public class GymsController {
     }
 
     @GetMapping(path = "/for/{playerid}")
-    public List<GymsDto> viewRecommendedGymsForASpecificPlayer(@PathVariable (name = "playerid") Integer playerId)
-    {
-        return this.gymsDao.viewRecommendedGymsForASpecificPlayer(playerId);
+    public List<GymsDto> viewRecommendedGymsForASpecificPlayer(@PathVariable (name = "playerid") Integer playerId) throws Exception {
+        return this.gymsDao.viewRecommendedGymsForASpecificPlayerUsingMachineLearning(playerId);
     }
     @GetMapping(path = "/{gymid}")
     public GymsDto returnAllGymData(@PathVariable (name = "gymid") Integer gymId)

@@ -77,6 +77,7 @@ public class PlayersDto {
                 .coachid(player.getCoachid())
                 .gymid(player.getGymid())
                 .city(player.getCity())
+                .coach(player.getCoach())
                 .path(player.getPath())
                 .build();
     }

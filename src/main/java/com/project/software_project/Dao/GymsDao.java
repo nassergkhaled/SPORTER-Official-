@@ -16,6 +16,11 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import weka.classifiers.trees.RandomForest;
+import weka.core.DenseInstance;
+import weka.core.Instance;
+import weka.core.Instances;
+import weka.core.converters.ConverterUtils;
 
 @Service
 public class GymsDao {
@@ -27,10 +32,46 @@ public class GymsDao {
     @Autowired
     private CoachesRepo coachesRepo;
 
+    private Instances data;
+    private RandomForest model;
+
+    public List<GymsDto> viewRecommendedGymsForASpecificPlayerUsingMachineLearning(Integer playerId) throws Exception {
+        try {
+            ConverterUtils.DataSource source = new ConverterUtils.DataSource("gyms.csv");
+            data = source.getDataSet();
+            data.setClassIndex(data.numAttributes() - 1);
+            model = new RandomForest();
+            model.buildClassifier(data);
+            Optional<PlayersEntity> player = this.playersRepo.findById(playerId);
+            if (player.isPresent()) {
+                Instance playerInstance = new DenseInstance(data.numAttributes());
+                playerInstance.setDataset(data);
+                // fill the player instance with the player data
+                // use the model to predict the recommended gyms
+                double[] prediction = model.distributionForInstance(playerInstance);
+                List<GymsEntity> recommendedGyms = new ArrayList<>();
+                // iterate over the prediction array to find the recommended gyms
+                for (int i = 0; i < prediction.length; i++) {
+                    if (prediction[i] > 0.8)
+                        recommendedGyms.add(GymRepo.findAllById(Integer.parseInt(data.attribute(data.classIndex()).value(i))));
+                }
+
+                // Sort the recommended gyms by rating and price
+                recommendedGyms.sort(Comparator.comparing(GymsEntity::getRating, Comparator.reverseOrder()));
+                recommendedGyms.sort(Comparator.comparing(GymsEntity::getAmountmonthly));
+
+                return GymsDto.convertDtoToEntity(recommendedGyms);
+            } else {
+                return new ArrayList<>();
+            }
+        } catch (Exception e) {
+            //System.out.println("\n\n\n\n>>>>>>>>>>>\n"+e.getStackTrace()+"\n\n\n");
+            return recommendedGyms(playerId);
+        }
+    }
 
 
-
-    public List<GymsDto> viewRecommendedGymsForASpecificPlayer(Integer playerId) {
+    public List<GymsDto> recommendedGyms(Integer playerId) {
         try {
             Optional<PlayersEntity>player=this.playersRepo.findById(playerId);
             if(player.isPresent())
@@ -49,6 +90,7 @@ public class GymsDao {
         }
 
     }
+
 
     public List<GymsEntity> viewAllGyms() {
         try {
